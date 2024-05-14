@@ -1,4 +1,4 @@
-// lib-stateful-core/common/CommonMacro.hpp
+// lib-stateful-core/common/CommonMacros.hpp
 
 #pragma once
 

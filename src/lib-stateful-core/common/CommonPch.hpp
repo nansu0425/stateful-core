@@ -6,4 +6,4 @@
 #include <iostream>
 
 // Common headers
-#include <lib-stateful-core/common/CommonMacro.hpp>
+#include <lib-stateful-core/common/CommonMacros.hpp>

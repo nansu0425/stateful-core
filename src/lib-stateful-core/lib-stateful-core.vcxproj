@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="common\CommonMacro.cpp" />
+    <ClCompile Include="common\CommonMacros.cpp" />
     <ClCompile Include="common\CommonPch.cpp" />
     <ClCompile Include="precompiled\Pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -29,7 +29,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common\CommonMacro.hpp" />
+    <ClInclude Include="common\CommonMacros.hpp" />
     <ClInclude Include="common\CommonPch.hpp" />
     <ClInclude Include="precompiled\Pch.hpp" />
   </ItemGroup>
