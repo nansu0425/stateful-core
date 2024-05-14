@@ -15,6 +15,9 @@
     <ClCompile Include="precompiled\Pch.cpp">
       <Filter>precompiled</Filter>
     </ClCompile>
+    <ClCompile Include="common\CommonMacro.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -22,6 +25,9 @@
     </ClInclude>
     <ClInclude Include="precompiled\Pch.hpp">
       <Filter>precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CommonMacro.hpp">
+      <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

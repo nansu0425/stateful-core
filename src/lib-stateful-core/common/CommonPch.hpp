@@ -2,6 +2,8 @@
 
 #pragma once
 
-#define WIN32_LEAN_AND_MEAN
-
+// C++ Standard Library headers
 #include <iostream>
+
+// Common headers
+#include <lib-stateful-core/common/CommonMacro.hpp>
