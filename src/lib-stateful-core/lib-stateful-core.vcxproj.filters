@@ -18,6 +18,9 @@
     <ClCompile Include="common\CommonMacros.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="common\CommonTypes.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -27,6 +30,9 @@
       <Filter>precompiled</Filter>
     </ClInclude>
     <ClInclude Include="common\CommonMacros.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\CommonTypes.hpp">
       <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>

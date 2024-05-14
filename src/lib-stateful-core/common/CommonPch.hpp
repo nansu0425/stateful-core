@@ -7,3 +7,4 @@
 
 // Common headers
 #include <lib-stateful-core/common/CommonMacros.hpp>
+#include <lib-stateful-core/common/CommonTypes.hpp>
