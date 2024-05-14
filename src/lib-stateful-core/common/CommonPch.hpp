@@ -31,5 +31,5 @@
 #pragma comment(lib, "Ws2_32.lib")
 
 // Common
-#include <lib-stateful-core/common/CommonMacros.hpp>
-#include <lib-stateful-core/common/CommonTypes.hpp>
+#include <lib-stateful-core/common/Macros.hpp>
+#include <lib-stateful-core/common/Types.hpp>

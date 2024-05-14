@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="common\CommonMacros.cpp" />
+    <ClCompile Include="common\Macros.cpp" />
     <ClCompile Include="common\CommonPch.cpp" />
-    <ClCompile Include="common\CommonTypes.cpp" />
+    <ClCompile Include="common\Types.cpp" />
     <ClCompile Include="precompiled\Pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -30,9 +30,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common\CommonMacros.hpp" />
+    <ClInclude Include="common\Macros.hpp" />
     <ClInclude Include="common\CommonPch.hpp" />
-    <ClInclude Include="common\CommonTypes.hpp" />
+    <ClInclude Include="common\Types.hpp" />
     <ClInclude Include="precompiled\Pch.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

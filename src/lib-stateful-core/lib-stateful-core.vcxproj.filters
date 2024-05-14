@@ -7,6 +7,9 @@
     <Filter Include="precompiled">
       <UniqueIdentifier>{21052c35-784c-49d6-8fbc-00a2cdbd6fc9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="thread">
+      <UniqueIdentifier>{81db0756-0a3c-4d7e-855c-06a3799e4c81}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\CommonPch.cpp">
@@ -15,10 +18,10 @@
     <ClCompile Include="precompiled\Pch.cpp">
       <Filter>precompiled</Filter>
     </ClCompile>
-    <ClCompile Include="common\CommonMacros.cpp">
+    <ClCompile Include="common\Macros.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="common\CommonTypes.cpp">
+    <ClCompile Include="common\Types.cpp">
       <Filter>common</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,10 +32,10 @@
     <ClInclude Include="precompiled\Pch.hpp">
       <Filter>precompiled</Filter>
     </ClInclude>
-    <ClInclude Include="common\CommonMacros.hpp">
+    <ClInclude Include="common\Macros.hpp">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="common\CommonTypes.hpp">
+    <ClInclude Include="common\Types.hpp">
       <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,8 +1,9 @@
-// lib-stateful-core/common/CommonTypes.hpp
+// lib-stateful-core/common/Types.hpp
 
 #pragma once
 
 // Byte
+
 using byte      = unsigned char;
 
 // Integers
