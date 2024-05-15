@@ -7,8 +7,8 @@
     <Filter Include="precompiled">
       <UniqueIdentifier>{21052c35-784c-49d6-8fbc-00a2cdbd6fc9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="thread">
-      <UniqueIdentifier>{81db0756-0a3c-4d7e-855c-06a3799e4c81}</UniqueIdentifier>
+    <Filter Include="multithreading">
+      <UniqueIdentifier>{8fdc3f54-b1e3-4ce7-bd53-f829abbc1555}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,6 +24,15 @@
     <ClCompile Include="common\Types.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="multithreading\ThreadManager.cpp">
+      <Filter>multithreading</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ThreadLocalStorage.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\Global.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -36,6 +45,15 @@
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="common\Types.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="multithreading\ThreadManager.hpp">
+      <Filter>multithreading</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ThreadLocalStorage.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Global.hpp">
       <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
