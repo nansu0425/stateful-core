@@ -16,9 +16,12 @@
 #include <unordered_map>
 #include <unordered_set>
 
-// Thread
+// Multithreading
 #include <mutex>
 #include <atomic>
+
+// Utilities
+#include <functional>
 
 // Windows
 #define WIN32_LEAN_AND_MEAN
@@ -33,3 +36,5 @@
 // Common
 #include <lib-stateful-core/common/Macros.hpp>
 #include <lib-stateful-core/common/Types.hpp>
+#include <lib-stateful-core/common/ThreadLocalStorage.hpp>
+#include <lib-stateful-core/common/Global.hpp>
