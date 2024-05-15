@@ -33,6 +33,9 @@
     <ClCompile Include="common\Global.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="multithreading\RwLock.cpp">
+      <Filter>multithreading</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -55,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="common\Global.hpp">
       <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="multithreading\RwLock.hpp">
+      <Filter>multithreading</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

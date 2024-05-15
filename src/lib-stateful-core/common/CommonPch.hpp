@@ -22,6 +22,7 @@
 
 // Utilities
 #include <functional>
+#include <cassert>
 
 // Windows
 #define WIN32_LEAN_AND_MEAN
