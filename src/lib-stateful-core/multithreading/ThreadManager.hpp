@@ -16,12 +16,16 @@ namespace StatefulCore
 			void Launch(Func<void()> callback);
 			void Join();
 
-			static void InitTLS();
-			static void DestroyTLS();
+		private:
+			void InitTLS();
+			void DestroyTLS();
+
+			ThreadId GetNextThreadId();
 
 		private:
-			Mutex        m_lock;
-			VecThread    m_threads;
+			Mutex              m_lock;
+			VecThread          m_threads;
+			HashSetThreadId    m_threadIds;
 		};
 	}
 }

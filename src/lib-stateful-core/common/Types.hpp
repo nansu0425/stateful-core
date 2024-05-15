@@ -17,8 +17,9 @@ namespace StatefulCore
 
 	// Multithreading
 	using Thread = std::thread;
-	using ThreadId = uint32;
 	using VecThread = std::vector<Thread>;
+	using ThreadId = uint16;
+	using HashSetThreadId = std::unordered_set<ThreadId>;
 	template<typename T>
 	using Atomic = std::atomic<T>;
 	using Mutex = std::mutex;

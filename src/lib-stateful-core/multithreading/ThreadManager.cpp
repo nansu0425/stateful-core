@@ -9,7 +9,7 @@ namespace StatefulCore
 	{
 		ThreadManager::ThreadManager()
 		{
-			InitTLS();
+			l_threadId = 1;
 		}
 
 		ThreadManager::~ThreadManager()
@@ -19,14 +19,14 @@ namespace StatefulCore
 
 		void ThreadManager::Launch(Func<void()> callback)
 		{
-			LockGrd lockGrd(m_lock);
+			LockGrd guard(m_lock);
 
 			m_threads.push_back(
-				Thread([=]()
+				Thread([this, callback]()
 					{
-						InitTLS();
+						this->InitTLS();
 						callback();
-						DestroyTLS();
+						this->DestroyTLS();
 					}
 				)
 			);
@@ -41,17 +41,36 @@ namespace StatefulCore
 			}
 
 			m_threads.clear();
+			m_threadIds.clear();
 		}
 
 		void ThreadManager::InitTLS()
 		{
-			static Atomic<ThreadId> s_nextThreadId = 1;
-			l_threadId = s_nextThreadId.fetch_add(1);
+			l_threadId = GetNextThreadId();
 		}
 
 		void ThreadManager::DestroyTLS()
 		{
 
+		}
+
+		ThreadId ThreadManager::GetNextThreadId()
+		{
+			static Atomic<ThreadId> s_nextId = 2;
+			ThreadId id = s_nextId.load();
+
+			while (true)
+			{
+				if (s_nextId.compare_exchange_weak(OUT id, id + 1))
+				{
+					LockGrd guard(m_lock);
+
+					if (m_threadIds.insert(id).second)
+						break;
+				}
+			}
+
+			return id;
 		}
 	}
 }
