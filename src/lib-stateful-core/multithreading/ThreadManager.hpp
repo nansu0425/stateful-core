@@ -6,6 +6,9 @@ namespace StatefulCore
 {
 	namespace Multithreading
 	{
+		/*---------------------*
+		 *    ThreadManager    *
+		 *---------------------*/
 		class ThreadManager
 		{
 		public:

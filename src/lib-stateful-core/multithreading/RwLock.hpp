@@ -6,16 +6,13 @@ namespace StatefulCore
 {
 	namespace Multithreading
 	{
-		/*
-		 * Lock Flag (32bit)
-		 * [Writer thread id (16bit)][Readers count (16bit)]
-		 * 
-		 * Writer thread id: exclusive lock owner
-		 * Readers count: shared lock count
-		 */
+		/*--------------*
+		 *    RwLock    *
+		 *--------------*/
 		class RwLock
 		{
 		protected:
+			// [Writer thread id (16bit)][Readers count (16bit)]
 			using LockFlag = uint32;
 
 			enum LockFlagMask : LockFlag
@@ -36,6 +33,9 @@ namespace StatefulCore
 			int16 m_acquiredWCount         = 0;
 		};
 
+		/*------------------*
+		 *    RwSpinLock    *
+		 *------------------*/
 		class RwSpinLock : public RwLock
 		{
 		private:
@@ -52,6 +52,9 @@ namespace StatefulCore
 			virtual void ReleaseW(const char* name = "") override;
 		};
 
+		/*------------------*
+		 *    RLockGuard    *
+		 *------------------*/
 		class RLockGuard
 		{
 		public:
@@ -71,6 +74,9 @@ namespace StatefulCore
 			const char*    m_name;
 		};
 
+		/*------------------*
+		 *    WLockGuard    *
+		 *------------------*/
 		class WLockGuard
 		{
 		public:
