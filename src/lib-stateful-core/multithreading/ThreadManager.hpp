@@ -27,8 +27,8 @@ namespace StatefulCore
 
 		private:
 			Mutex              m_lock;
-			VecThread          m_threads;
-			HashSetThreadId    m_threadIds;
+			Vec<Thread>        m_threads;
+			HashSet<ThreadId>  m_threadIds;
 		};
 	}
 }
