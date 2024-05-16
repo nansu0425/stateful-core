@@ -36,6 +36,9 @@
     <ClCompile Include="multithreading\RwLock.cpp">
       <Filter>multithreading</Filter>
     </ClCompile>
+    <ClCompile Include="multithreading\DeadLockProfiler.cpp">
+      <Filter>multithreading</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -60,6 +63,9 @@
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="multithreading\RwLock.hpp">
+      <Filter>multithreading</Filter>
+    </ClInclude>
+    <ClInclude Include="multithreading\DeadLockProfiler.hpp">
       <Filter>multithreading</Filter>
     </ClInclude>
   </ItemGroup>

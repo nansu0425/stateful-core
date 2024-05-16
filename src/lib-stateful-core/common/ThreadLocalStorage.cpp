@@ -5,6 +5,7 @@
 
 namespace StatefulCore
 {
-	thread_local ThreadId    l_threadId = 0;
+	thread_local ThreadId              l_threadId = 0;
+	thread_local std::stack<LockId>    l_lockStack;
 }
 

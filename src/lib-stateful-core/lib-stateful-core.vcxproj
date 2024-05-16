@@ -24,6 +24,7 @@
     <ClCompile Include="common\CommonPch.cpp" />
     <ClCompile Include="common\ThreadLocalStorage.cpp" />
     <ClCompile Include="common\Types.cpp" />
+    <ClCompile Include="multithreading\DeadLockProfiler.cpp" />
     <ClCompile Include="multithreading\RwLock.cpp" />
     <ClCompile Include="multithreading\ThreadManager.cpp" />
     <ClCompile Include="precompiled\Pch.cpp">
@@ -39,6 +40,7 @@
     <ClInclude Include="common\CommonPch.hpp" />
     <ClInclude Include="common\ThreadLocalStorage.hpp" />
     <ClInclude Include="common\Types.hpp" />
+    <ClInclude Include="multithreading\DeadLockProfiler.hpp" />
     <ClInclude Include="multithreading\RwLock.hpp" />
     <ClInclude Include="multithreading\ThreadManager.hpp" />
     <ClInclude Include="precompiled\Pch.hpp" />

@@ -37,7 +37,7 @@ namespace StatefulCore
 	using UniLock = std::unique_lock<Mutex>;
 	using LockGrd = std::lock_guard<Mutex>;
 	using LockName = const char*;
-	using LockId = uint32;
+	using LockId = int32;
 
 	// Utilities
 	template<typename FuncT>
