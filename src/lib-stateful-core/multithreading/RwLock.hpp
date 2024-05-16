@@ -51,5 +51,43 @@ namespace StatefulCore
 			virtual void ReleaseR(const char* name = "") override;
 			virtual void ReleaseW(const char* name = "") override;
 		};
+
+		class RLockGuard
+		{
+		public:
+			RLockGuard(RwLock& lock, const char* name)
+				: m_lock(lock), m_name(name)
+			{
+				m_lock.AcquireR(m_name);
+			}
+
+			~RLockGuard()
+			{
+				m_lock.ReleaseR(m_name);
+			}
+
+		private:
+			RwLock&        m_lock;
+			const char*    m_name;
+		};
+
+		class WLockGuard
+		{
+		public:
+			WLockGuard(RwLock& lock, const char* name)
+				: m_lock(lock), m_name(name)
+			{
+				m_lock.AcquireW(m_name);
+			}
+
+			~WLockGuard()
+			{
+				m_lock.ReleaseW(m_name);
+			}
+
+		private:
+			RwLock&        m_lock;
+			const char*    m_name;
+		};
 	}
 }
