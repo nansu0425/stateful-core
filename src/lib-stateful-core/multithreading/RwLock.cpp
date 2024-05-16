@@ -7,7 +7,7 @@ namespace StatefulCore
 {
 	namespace Multithreading
 	{
-		void RwSpinLock::AcquireR(const char* name)
+		void RwSpinLock::AcquireR(LockName name)
 		{
 			const ThreadId writerId = m_lockFlag.load() >> 16;
 
@@ -37,7 +37,7 @@ namespace StatefulCore
 			}
 		}
 
-		void RwSpinLock::AcquireW(const char* name)
+		void RwSpinLock::AcquireW(LockName name)
 		{
 			const ThreadId writerId = m_lockFlag.load() >> 16;
 
@@ -71,13 +71,13 @@ namespace StatefulCore
 			}
 		}
 
-		void RwSpinLock::ReleaseR(const char* name)
+		void RwSpinLock::ReleaseR(LockName name)
 		{
 			// Check multiple releasing.
 			assert((m_lockFlag.fetch_sub(1) & LockFlagMask::READERS_COUNT_MASK) == 0);
 		}
 
-		void RwSpinLock::ReleaseW(const char* name)
+		void RwSpinLock::ReleaseW(LockName name)
 		{
 			// Check invalid lock oreder.
 			assert((m_lockFlag & LockFlagMask::READERS_COUNT_MASK) == 0);

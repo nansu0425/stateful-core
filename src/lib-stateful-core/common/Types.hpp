@@ -18,16 +18,12 @@ namespace StatefulCore
 	// Containers
 	template<typename T>
 	using Vec = std::vector<T>;
-
 	template<typename KeyT, typename ValT>
 	using TreeMap = std::map<KeyT, ValT>;
-	
 	template<typename KeyT, typename ValT>
 	using HashMap = std::unordered_map<KeyT, ValT>;
-
 	template<typename T>
 	using TreeSet = std::set<T>;
-
 	template<typename T>
 	using HashSet = std::unordered_set<T>;
 
@@ -40,8 +36,10 @@ namespace StatefulCore
 	using CondVar = std::condition_variable;
 	using UniLock = std::unique_lock<Mutex>;
 	using LockGrd = std::lock_guard<Mutex>;
+	using LockName = const char*;
+	using LockId = uint32;
 
 	// Utilities
-	template<typename FuncType>
-	using Func = std::function<FuncType>;
+	template<typename FuncT>
+	using Func = std::function<FuncT>;
 }

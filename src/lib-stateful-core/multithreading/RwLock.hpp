@@ -23,14 +23,14 @@ namespace StatefulCore
 			};
 
 		public:
-			virtual void AcquireR(const char* name = "") abstract;
-			virtual void AcquireW(const char* name = "") abstract;
-			virtual void ReleaseR(const char* name = "") abstract;
-			virtual void ReleaseW(const char* name = "") abstract;
+			virtual void AcquireR(LockName name) abstract;
+			virtual void AcquireW(LockName name) abstract;
+			virtual void ReleaseR(LockName name) abstract;
+			virtual void ReleaseW(LockName name) abstract;
 
 		protected:
-			Atomic<LockFlag> m_lockFlag    = LockFlagMask::EMPTY_MASK;
-			int16 m_acquiredWCount         = 0;
+			Atomic<LockFlag> m_lockFlag = LockFlagMask::EMPTY_MASK;
+			int16 m_acquiredWCount = 0;
 		};
 
 		/*------------------*
@@ -41,15 +41,15 @@ namespace StatefulCore
 		private:
 			enum SpinConst : uint32
 			{
-				ACQUIRE_TIMEOUT_TICK    = 10000,
-				MAX_SPIN_COUNT          = 5000,
+				ACQUIRE_TIMEOUT_TICK = 10000,
+				MAX_SPIN_COUNT = 5000,
 			};
 
 		public:
-			virtual void AcquireR(const char* name = "") override;
-			virtual void AcquireW(const char* name = "") override;
-			virtual void ReleaseR(const char* name = "") override;
-			virtual void ReleaseW(const char* name = "") override;
+			virtual void AcquireR(LockName name) override;
+			virtual void AcquireW(LockName name) override;
+			virtual void ReleaseR(LockName name) override;
+			virtual void ReleaseW(LockName name) override;
 		};
 
 		/*------------------*
@@ -58,7 +58,7 @@ namespace StatefulCore
 		class RLockGuard
 		{
 		public:
-			RLockGuard(RwLock& lock, const char* name)
+			RLockGuard(RwLock& lock, LockName name)
 				: m_lock(lock), m_name(name)
 			{
 				m_lock.AcquireR(m_name);
@@ -70,8 +70,8 @@ namespace StatefulCore
 			}
 
 		private:
-			RwLock&        m_lock;
-			const char*    m_name;
+			RwLock&     m_lock;
+			LockName    m_name;
 		};
 
 		/*------------------*
@@ -80,7 +80,7 @@ namespace StatefulCore
 		class WLockGuard
 		{
 		public:
-			WLockGuard(RwLock& lock, const char* name)
+			WLockGuard(RwLock& lock, LockName name)
 				: m_lock(lock), m_name(name)
 			{
 				m_lock.AcquireW(m_name);
@@ -92,8 +92,8 @@ namespace StatefulCore
 			}
 
 		private:
-			RwLock&        m_lock;
-			const char*    m_name;
+			RwLock&     m_lock;
+			LockName    m_name;
 		};
 	}
 }
