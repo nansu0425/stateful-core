@@ -61,7 +61,7 @@ namespace StatefulCore
 
 			while (true)
 			{
-				if (s_nextId.compare_exchange_weak(OUT id, id + 1))
+				if (s_nextId.compare_exchange_weak(OUT id, id + 1) && id > 1)
 				{
 					LockGrd guard(m_lock);
 
