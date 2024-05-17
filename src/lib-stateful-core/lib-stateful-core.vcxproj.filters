@@ -51,6 +51,9 @@
     <ClCompile Include="memory\MemoryManager.cpp">
       <Filter>memory</Filter>
     </ClCompile>
+    <ClCompile Include="memory\ObjectPool.cpp">
+      <Filter>memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -87,6 +90,9 @@
       <Filter>memory</Filter>
     </ClInclude>
     <ClInclude Include="memory\MemoryManager.hpp">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\ObjectPool.hpp">
       <Filter>memory</Filter>
     </ClInclude>
   </ItemGroup>
