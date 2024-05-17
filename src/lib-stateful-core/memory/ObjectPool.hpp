@@ -8,13 +8,13 @@ namespace StatefulCore
 {
 	namespace Memory
 	{
+		/*------------------*
+		 *    ObjectPool    *
+		 *------------------*/
+
 		template<typename T>
 		class ObjectPool
 		{
-		private:
-			static int32         s_allocSize;
-			static MemoryPool    s_pool;
-
 		public:
 			template<typename... Args>
 			static T* Pop(Args&&... args)
@@ -54,6 +54,16 @@ namespace StatefulCore
 
 				return sPtr;
 			}
+
+		private:
+			static int32         s_allocSize;
+			static MemoryPool    s_pool;
 		};
+
+		template<typename T>
+		int32 ObjectPool<T>::s_allocSize = sizeof(T) + sizeof(MemoryHeader);
+
+		template<typename T>
+		MemoryPool ObjectPool<T>::s_pool(s_allocSize);
 	}
 }
