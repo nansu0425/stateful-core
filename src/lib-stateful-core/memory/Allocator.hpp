@@ -6,6 +6,10 @@ namespace StatefulCore
 {
 	namespace Memory
 	{
+		/*----------------------*
+		 *    StompAllocator    *
+		 *----------------------*/
+
 		class StompAllocator
 		{
 		private:
