@@ -65,3 +65,4 @@
 // Memory
 #include <lib-stateful-core/memory/Allocator.hpp>
 #include <lib-stateful-core/memory/MemoryManager.hpp>
+#include <lib-stateful-core/memory/ObjectPool.hpp>
