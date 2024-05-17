@@ -110,7 +110,7 @@ namespace StatefulCore
 				// else -> (id, nextId) is cross edge
 				if (m_finished[nextId] == false)
 				{
-					printf_s("%s -> %s\n", m_idToName[id], m_idToName[nextId]);
+					printf_s("Detected deadlock!\n%s -> %s\n", m_idToName[id], m_idToName[nextId]);
 
 					int32 curId = id;
 					while (true)
