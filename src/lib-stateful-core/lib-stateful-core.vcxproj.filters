@@ -10,6 +10,9 @@
     <Filter Include="multithreading">
       <UniqueIdentifier>{8fdc3f54-b1e3-4ce7-bd53-f829abbc1555}</UniqueIdentifier>
     </Filter>
+    <Filter Include="memory">
+      <UniqueIdentifier>{8dd0768b-60a0-42cb-a08b-997dfe52bbc2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\CommonPch.cpp">
@@ -39,6 +42,9 @@
     <ClCompile Include="multithreading\DeadLockProfiler.cpp">
       <Filter>multithreading</Filter>
     </ClCompile>
+    <ClCompile Include="memory\Allocator.cpp">
+      <Filter>memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -67,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="multithreading\DeadLockProfiler.hpp">
       <Filter>multithreading</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\Allocator.hpp">
+      <Filter>memory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
