@@ -9,6 +9,10 @@ namespace StatefulCore
 	{
 		void RwSpinLock::AcquireR(LockName name)
 		{
+#ifdef _DEBUG
+			g_deadLockProfiler->PushLock(name);
+#endif // _DEBUG
+
 			const ThreadId writerId = m_lockFlag.load() >> 16;
 
 			// Acquire readers lock after acquiring writer lock.
@@ -39,6 +43,10 @@ namespace StatefulCore
 
 		void RwSpinLock::AcquireW(LockName name)
 		{
+#ifdef _DEBUG
+			g_deadLockProfiler->PushLock(name);
+#endif // _DEBUG
+
 			const ThreadId writerId = m_lockFlag.load() >> 16;
 
 			// Reacquire writer lock.
@@ -73,12 +81,20 @@ namespace StatefulCore
 
 		void RwSpinLock::ReleaseR(LockName name)
 		{
+#ifdef _DEBUG
+			g_deadLockProfiler->PopLock(name);
+#endif // _DEBUG
+
 			// Check multiple releasing.
 			assert((m_lockFlag.fetch_sub(1) & LockFlagMask::READERS_COUNT_MASK) == 0);
 		}
 
 		void RwSpinLock::ReleaseW(LockName name)
 		{
+#ifdef _DEBUG
+			g_deadLockProfiler->PopLock(name);
+#endif // _DEBUG
+
 			// Check invalid lock oreder.
 			assert((m_lockFlag & LockFlagMask::READERS_COUNT_MASK) == 0);
 
