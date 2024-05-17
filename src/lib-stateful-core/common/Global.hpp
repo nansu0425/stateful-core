@@ -2,13 +2,18 @@
 
 #pragma once
 
-#include <lib-stateful-core/multithreading/ThreadManager.hpp>
-#include <lib-stateful-core/multithreading/DeadLockProfiler.hpp>
-
 namespace StatefulCore
 {
-	extern Multithreading::ThreadManager*       g_threadManager;
-	extern Multithreading::DeadLockProfiler*    g_deadLockProfiler;
+	namespace Multithreading
+	{
+		extern class ThreadManager*       g_threadManager;
+		extern class DeadLockProfiler*    g_deadLockProfiler;
+	}
+	
+	namespace Memory
+	{
+		extern class MemoryManager*    g_memoryManager;
+	}
 
 	class Global
 	{

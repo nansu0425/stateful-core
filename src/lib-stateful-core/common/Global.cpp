@@ -2,22 +2,35 @@
 
 #include <lib-stateful-core/precompiled/Pch.hpp>
 #include <lib-stateful-core/common/Global.hpp>
+#include <lib-stateful-core/multithreading/ThreadManager.hpp>
+#include <lib-stateful-core/multithreading/DeadLockProfiler.hpp>
+#include <lib-stateful-core/memory/MemoryManager.hpp>
 
 namespace StatefulCore
 {
-	Multithreading::ThreadManager*       g_threadManager = nullptr;
-	Multithreading::DeadLockProfiler*    g_deadLockProfiler = nullptr;
+	namespace Multithreading
+	{
+		ThreadManager* g_threadManager;
+		DeadLockProfiler* g_deadLockProfiler;
+	}
+
+	namespace Memory
+	{
+		MemoryManager* g_memoryManager;
+	}
 	
 	Global::Global()
 	{
-		g_threadManager = new Multithreading::ThreadManager();
-		g_deadLockProfiler = new Multithreading::DeadLockProfiler();
+		Multithreading::g_threadManager = new Multithreading::ThreadManager();
+		Multithreading::g_deadLockProfiler = new Multithreading::DeadLockProfiler();
+		Memory::g_memoryManager = new Memory::MemoryManager();
 	}
 
 	Global::~Global()
 	{
-		delete g_threadManager;
-		delete g_deadLockProfiler;
+		delete Multithreading::g_threadManager;
+		delete Multithreading::g_deadLockProfiler;
+		delete Memory::g_memoryManager;
 	}
 
 	Global g_global;

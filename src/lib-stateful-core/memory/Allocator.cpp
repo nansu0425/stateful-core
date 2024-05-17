@@ -2,6 +2,7 @@
 
 #include <lib-stateful-core/precompiled/Pch.hpp>
 #include <lib-stateful-core/memory/Allocator.hpp>
+#include <lib-stateful-core/memory/MemoryManager.hpp>
 
 namespace StatefulCore
 {
@@ -25,6 +26,16 @@ namespace StatefulCore
 			const int64 baseAddr = addr - (addr % PAGE_SIZE);
 
 			::VirtualFree(reinterpret_cast<void*>(baseAddr), 0, MEM_RELEASE);
+		}
+
+		void* PoolAllocator::Allocate(int32 size)
+		{
+			return g_memoryManager->Allocate(size);
+		}
+
+		void PoolAllocator::Release(void* ptr)
+		{
+			g_memoryManager->Release(ptr);
 		}
 	}
 }

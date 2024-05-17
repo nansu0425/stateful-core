@@ -25,6 +25,8 @@
     <ClCompile Include="common\ThreadLocalStorage.cpp" />
     <ClCompile Include="common\Types.cpp" />
     <ClCompile Include="memory\Allocator.cpp" />
+    <ClCompile Include="memory\MemoryManager.cpp" />
+    <ClCompile Include="memory\MemoryPool.cpp" />
     <ClCompile Include="multithreading\DeadLockProfiler.cpp" />
     <ClCompile Include="multithreading\RwLock.cpp" />
     <ClCompile Include="multithreading\ThreadManager.cpp" />
@@ -42,6 +44,8 @@
     <ClInclude Include="common\ThreadLocalStorage.hpp" />
     <ClInclude Include="common\Types.hpp" />
     <ClInclude Include="memory\Allocator.hpp" />
+    <ClInclude Include="memory\MemoryManager.hpp" />
+    <ClInclude Include="memory\MemoryPool.hpp" />
     <ClInclude Include="multithreading\DeadLockProfiler.hpp" />
     <ClInclude Include="multithreading\RwLock.hpp" />
     <ClInclude Include="multithreading\ThreadManager.hpp" />

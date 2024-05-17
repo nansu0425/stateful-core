@@ -33,6 +33,9 @@
 // Error handling
 #include <cassert>
 
+// Dynamic memory management
+#include <memory>
+
 /*---------------*
  *    Windows    *
  *---------------*/
@@ -58,3 +61,7 @@
 
 // Multithreading
 #include <lib-stateful-core/multithreading/RwLock.hpp>
+
+// Memory
+#include <lib-stateful-core/memory/Allocator.hpp>
+#include <lib-stateful-core/memory/MemoryManager.hpp>

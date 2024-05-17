@@ -2,6 +2,7 @@
 
 #include <lib-stateful-core/precompiled/Pch.hpp>
 #include <lib-stateful-core/multithreading/RwLock.hpp>
+#include <lib-stateful-core/multithreading/DeadLockProfiler.hpp>
 
 namespace StatefulCore
 {

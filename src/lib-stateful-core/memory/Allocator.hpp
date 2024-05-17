@@ -19,5 +19,16 @@ namespace StatefulCore
 			static void*    Allocate(int32 size);
 			static void	    Release(void* ptr);
 		};
+
+		/*---------------------*
+		 *    PoolAllocator    *
+		 *---------------------*/
+
+		class PoolAllocator
+		{
+		public:
+			static void*    Allocate(int32 size);
+			static void     Release(void* ptr);
+		};
 	}
 }

@@ -45,6 +45,12 @@
     <ClCompile Include="memory\Allocator.cpp">
       <Filter>memory</Filter>
     </ClCompile>
+    <ClCompile Include="memory\MemoryPool.cpp">
+      <Filter>memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\MemoryManager.cpp">
+      <Filter>memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -75,6 +81,12 @@
       <Filter>multithreading</Filter>
     </ClInclude>
     <ClInclude Include="memory\Allocator.hpp">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\MemoryPool.hpp">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\MemoryManager.hpp">
       <Filter>memory</Filter>
     </ClInclude>
   </ItemGroup>
