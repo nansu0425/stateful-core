@@ -42,4 +42,5 @@ namespace StatefulCore
 	// Utilities
 	template<typename FuncT>
 	using Func = std::function<FuncT>;
+	using namespace std::chrono_literals;
 }
