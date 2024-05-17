@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="main">
+      <UniqueIdentifier>{e5c064b4-17b6-444c-8a11-d11673afe07b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="precompiled">
+      <UniqueIdentifier>{dc9d4df5-ae0a-4124-b540-53d56e56d01d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="precompiled\Pch.cpp">
+      <Filter>precompiled</Filter>
+    </ClCompile>
+    <ClCompile Include="main\Main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="precompiled\Pch.hpp">
+      <Filter>precompiled</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
