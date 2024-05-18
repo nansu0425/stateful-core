@@ -25,6 +25,7 @@
     <ClCompile Include="common\ThreadLocalStorage.cpp" />
     <ClCompile Include="common\Types.cpp" />
     <ClCompile Include="memory\Allocator.cpp" />
+    <ClCompile Include="memory\Containers.cpp" />
     <ClCompile Include="memory\MemoryManager.cpp" />
     <ClCompile Include="memory\MemoryPool.cpp" />
     <ClCompile Include="memory\ObjectPool.cpp" />
@@ -45,6 +46,7 @@
     <ClInclude Include="common\ThreadLocalStorage.hpp" />
     <ClInclude Include="common\Types.hpp" />
     <ClInclude Include="memory\Allocator.hpp" />
+    <ClInclude Include="memory\Containers.hpp" />
     <ClInclude Include="memory\MemoryManager.hpp" />
     <ClInclude Include="memory\MemoryPool.hpp" />
     <ClInclude Include="memory\ObjectPool.hpp" />
