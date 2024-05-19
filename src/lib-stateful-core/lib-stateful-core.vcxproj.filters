@@ -66,6 +66,9 @@
     <ClCompile Include="network\SocketFunctions.cpp">
       <Filter>network</Filter>
     </ClCompile>
+    <ClCompile Include="network\IocpEventForwarder.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -114,6 +117,9 @@
       <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="network\SocketFunctions.hpp">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\IocpEventForwarder.hpp">
       <Filter>network</Filter>
     </ClInclude>
   </ItemGroup>
