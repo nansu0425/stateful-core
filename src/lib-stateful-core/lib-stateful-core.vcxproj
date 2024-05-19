@@ -32,7 +32,7 @@
     <ClCompile Include="multithreading\DeadLockProfiler.cpp" />
     <ClCompile Include="multithreading\RwLock.cpp" />
     <ClCompile Include="multithreading\ThreadManager.cpp" />
-    <ClCompile Include="network\SocketAddress.cpp" />
+    <ClCompile Include="network\SockaddrWrapper.cpp" />
     <ClCompile Include="precompiled\Pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -54,7 +54,7 @@
     <ClInclude Include="multithreading\DeadLockProfiler.hpp" />
     <ClInclude Include="multithreading\RwLock.hpp" />
     <ClInclude Include="multithreading\ThreadManager.hpp" />
-    <ClInclude Include="network\SocketAddress.hpp" />
+    <ClInclude Include="network\SockaddrWrapper.hpp" />
     <ClInclude Include="precompiled\Pch.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
