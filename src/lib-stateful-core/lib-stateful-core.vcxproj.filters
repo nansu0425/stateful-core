@@ -63,6 +63,9 @@
     <ClCompile Include="network\SockaddrWrapper.cpp">
       <Filter>network</Filter>
     </ClCompile>
+    <ClCompile Include="network\SocketFunctions.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -108,6 +111,9 @@
       <Filter>memory</Filter>
     </ClInclude>
     <ClInclude Include="network\SockaddrWrapper.hpp">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\SocketFunctions.hpp">
       <Filter>network</Filter>
     </ClInclude>
   </ItemGroup>
