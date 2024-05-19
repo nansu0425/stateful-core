@@ -67,3 +67,6 @@
 #include <lib-stateful-core/memory/MemoryManager.hpp>
 #include <lib-stateful-core/memory/ObjectPool.hpp>
 #include <lib-stateful-core/memory/Containers.hpp>
+
+// Network
+#include <lib-stateful-core/network/IocpEventForwarder.hpp>
