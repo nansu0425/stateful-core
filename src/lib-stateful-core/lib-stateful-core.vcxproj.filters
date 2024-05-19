@@ -72,6 +72,9 @@
     <ClCompile Include="network\IocpEvents.cpp">
       <Filter>network</Filter>
     </ClCompile>
+    <ClCompile Include="network\ReceiveBuffer.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -126,6 +129,9 @@
       <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="network\IocpEvents.hpp">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\ReceiveBuffer.hpp">
       <Filter>network</Filter>
     </ClInclude>
   </ItemGroup>

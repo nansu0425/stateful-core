@@ -34,6 +34,7 @@
     <ClCompile Include="multithreading\ThreadManager.cpp" />
     <ClCompile Include="network\IocpEventForwarder.cpp" />
     <ClCompile Include="network\IocpEvents.cpp" />
+    <ClCompile Include="network\ReceiveBuffer.cpp" />
     <ClCompile Include="network\SockaddrWrapper.cpp" />
     <ClCompile Include="network\SocketFunctions.cpp" />
     <ClCompile Include="precompiled\Pch.cpp">
@@ -59,6 +60,7 @@
     <ClInclude Include="multithreading\ThreadManager.hpp" />
     <ClInclude Include="network\IocpEventForwarder.hpp" />
     <ClInclude Include="network\IocpEvents.hpp" />
+    <ClInclude Include="network\ReceiveBuffer.hpp" />
     <ClInclude Include="network\SockaddrWrapper.hpp" />
     <ClInclude Include="network\SocketFunctions.hpp" />
     <ClInclude Include="precompiled\Pch.hpp" />
