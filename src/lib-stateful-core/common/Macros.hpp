@@ -4,6 +4,11 @@
 
 #define OUT
 
+#define SIZE_16(val)     static_cast<int16>(sizeof(val))
+#define SIZE_32(val)     static_cast<int32>(sizeof(val))
+#define LENTH_16(arr)    static_cast<int16>(sizeof(arr)/sizeof(arr[0]))
+#define LENTH_32(arr)    static_cast<int32>(sizeof(arr)/sizeof(arr[0]))
+
 /*----------------------*
  *    Multithreading    *
  *----------------------*/
