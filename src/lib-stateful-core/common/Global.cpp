@@ -5,6 +5,7 @@
 #include <lib-stateful-core/multithreading/ThreadManager.hpp>
 #include <lib-stateful-core/multithreading/DeadLockProfiler.hpp>
 #include <lib-stateful-core/memory/MemoryManager.hpp>
+#include <lib-stateful-core/network/SendBufferManager.hpp>
 
 namespace StatefulCore
 {
@@ -18,12 +19,18 @@ namespace StatefulCore
 	{
 		MemoryManager* g_memoryManager;
 	}
+
+	namespace Network
+	{
+		SendBufferManager* g_sendBufferManager;
+	}
 	
 	Global::Global()
 	{
 		Multithreading::g_threadManager = new Multithreading::ThreadManager();
 		Multithreading::g_deadLockProfiler = new Multithreading::DeadLockProfiler();
 		Memory::g_memoryManager = new Memory::MemoryManager();
+		Network::g_sendBufferManager = new Network::SendBufferManager();
 	}
 
 	Global::~Global()
@@ -31,6 +38,7 @@ namespace StatefulCore
 		delete Multithreading::g_threadManager;
 		delete Multithreading::g_deadLockProfiler;
 		delete Memory::g_memoryManager;
+		delete Network::g_sendBufferManager;
 	}
 
 	Global g_global;

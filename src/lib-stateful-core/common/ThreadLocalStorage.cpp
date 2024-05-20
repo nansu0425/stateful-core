@@ -5,7 +5,15 @@
 
 namespace StatefulCore
 {
-	thread_local ThreadId              l_threadId = 0;
-	thread_local std::stack<LockId>    l_lockStack;
+	namespace Multithreading
+	{
+		thread_local ThreadId              l_threadId = 0;
+		thread_local std::stack<LockId>    l_lockStack;
+	}
+
+	namespace Network
+	{
+		thread_local SPtr<SendBuffer>    l_sendBuf = nullptr;
+	}
 }
 

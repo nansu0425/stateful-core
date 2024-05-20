@@ -15,6 +15,11 @@ namespace StatefulCore
 		extern class MemoryManager*    g_memoryManager;
 	}
 
+	namespace Network
+	{
+		extern class SendBufferManager*    g_sendBufferManager;
+	}
+
 	class Global
 	{
 	public:
