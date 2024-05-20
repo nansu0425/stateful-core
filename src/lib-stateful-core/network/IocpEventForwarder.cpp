@@ -33,19 +33,19 @@ namespace StatefulCore
 
 		bool IocpEventForwarder::ForwardEvent2Handler(uint32 timeoutMs)
 		{
-			DWORD trnasferredByteCount = 0;
+			DWORD numBytesTransferred = 0;
 			ULONG_PTR key = 0;
 			IocpEvent* passedEvent = nullptr;
 
 			if (::GetQueuedCompletionStatus(
 				m_iocp, 
-				OUT &trnasferredByteCount, 
+				OUT &numBytesTransferred,
 				OUT &key, 
 				OUT reinterpret_cast<LPOVERLAPPED*>(&passedEvent),
 				timeoutMs))
 			{
 				SPtr<IocpEventHandler> handler = passedEvent->GetHandler();
-				handler->Handle(passedEvent, trnasferredByteCount);
+				handler->Handle(passedEvent, numBytesTransferred);
 			}
 			else
 			{
@@ -58,7 +58,7 @@ namespace StatefulCore
 					return false;
 				default:
 					SPtr<IocpEventHandler> handler = passedEvent->GetHandler();
-					handler->Handle(passedEvent, trnasferredByteCount);
+					handler->Handle(passedEvent, numBytesTransferred);
 					break;
 				}
 			}

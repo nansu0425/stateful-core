@@ -37,7 +37,7 @@ namespace StatefulCore
 		{
 		public:
 			virtual HANDLE    GetHandle() abstract;
-			virtual void      Handle(IocpEvent* event, int32 numOfBytesTransferred = 0) abstract;
+			virtual void      Handle(IocpEvent* event, int32 numBytesTransferred = 0) abstract;
 		};
 
 		/*--------------------------*
