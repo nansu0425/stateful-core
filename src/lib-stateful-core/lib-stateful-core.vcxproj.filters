@@ -78,6 +78,15 @@
     <ClCompile Include="network\SendBufferManager.cpp">
       <Filter>network</Filter>
     </ClCompile>
+    <ClCompile Include="network\Session.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\Service.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\Listener.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -138,6 +147,15 @@
       <Filter>network</Filter>
     </ClInclude>
     <ClInclude Include="network\SendBufferManager.hpp">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\Session.hpp">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\Service.hpp">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\Listener.hpp">
       <Filter>network</Filter>
     </ClInclude>
   </ItemGroup>

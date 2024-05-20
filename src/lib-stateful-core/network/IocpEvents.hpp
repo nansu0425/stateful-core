@@ -18,17 +18,29 @@ namespace StatefulCore
 			SEND,
 		};
 
+		/*--------------------*
+		 *    ConnectEvent    *
+		 *--------------------*/
+
 		class ConnectEvent : public IocpEvent
 		{
 		public:
 			ConnectEvent() : IocpEvent(IocpEventType::CONNECT) { }
 		};
 
+		/*-----------------------*
+		 *    DisconnectEvent    *
+		 *-----------------------*/
+
 		class DisconnectEvent : public IocpEvent
 		{
 		public:
 			DisconnectEvent() : IocpEvent(IocpEventType::DISCONNECT) { }
 		};
+
+		/*-------------------*
+		 *    AcceptEvent    *
+		 *-------------------*/
 
 		class AcceptEvent : public IocpEvent
 		{
@@ -39,19 +51,33 @@ namespace StatefulCore
 			SPtr<Session>    m_session = nullptr;
 		};
 
+		/*--------------------*
+		 *    ReceiveEvent    *
+		 *--------------------*/
+
 		class ReceiveEvent : public IocpEvent
 		{
 		public:
 			ReceiveEvent() : IocpEvent(IocpEventType::RECEIVE) { }
 		};
 
+		/*-----------------*
+		 *    SendEvent    *
+		 *-----------------*/
+
 		class SendEvent : public IocpEvent
 		{
+		private:
+			using VecSendBufChunk = Memory::Vector<SPtr<SendBufferChunk>>;
+
 		public:
 			SendEvent() : IocpEvent(IocpEventType::SEND) { }
 
+		public:
+			VecSendBufChunk& RefSendBufChunks() { return m_sendBufChunks; }
+
 		private:
-			Memory::Vector<SPtr<SendBuffer>>     m_sendBufs;
+			VecSendBufChunk    m_sendBufChunks;
 		};
 	}
 }

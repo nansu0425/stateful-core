@@ -21,8 +21,8 @@ namespace StatefulCore
 		public:
 			void    Rearrange();
 
-			byte*    GetIndexRead() { return &m_buffer[m_idxRead]; }
-			byte*    GetIndexWrite() { return &m_buffer[m_idxWrite]; }
+			byte*    GetPtrRead() { return &m_buffer[m_idxRead]; }
+			byte*    GetPtrWrite() { return &m_buffer[m_idxWrite]; }
 			int32    GetDataSize() { return m_idxWrite - m_idxRead; }
 			int32    GetFreeSize() { return m_capacity - m_idxWrite; }
 

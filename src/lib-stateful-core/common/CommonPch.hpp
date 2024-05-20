@@ -71,3 +71,6 @@
 // Network
 #include <lib-stateful-core/network/IocpEventForwarder.hpp>
 #include <lib-stateful-core/network/SockaddrWrapper.hpp>
+#include <lib-stateful-core/network/ReceiveBuffer.hpp>
+#include <lib-stateful-core/network/SendBufferManager.hpp>
+#include <lib-stateful-core/network/Session.hpp>

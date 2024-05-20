@@ -19,10 +19,12 @@ namespace StatefulCore
 			IocpEvent(IocpEventType type) : m_type(type) { Init(); }
 
 		public:
+			void Init();
+
+			IocpEventType             GetType() { return m_type; }
 			SPtr<IocpEventHandler>    GetHandler() { return m_handler; }
 
-		private:
-			void Init();
+			void    SetHandler(SPtr<IocpEventHandler> handler) { m_handler = handler; }
 
 		private:
 			IocpEventType             m_type;
@@ -37,7 +39,7 @@ namespace StatefulCore
 		{
 		public:
 			virtual HANDLE    GetHandle() abstract;
-			virtual void      Handle(IocpEvent* event, int32 numBytesTransferred = 0) abstract;
+			virtual void      Handle(IocpEvent* target, int32 numBytesTransferred = 0) abstract;
 		};
 
 		/*--------------------------*
