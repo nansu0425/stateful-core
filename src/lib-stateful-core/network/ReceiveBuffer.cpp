@@ -18,31 +18,31 @@ namespace StatefulCore
 			int32 dataSize = GetDataSize();
 
 			if (dataSize == 0)
-				m_posRead = m_posWrite = 0;
+				m_idxRead = m_idxWrite = 0;
 			else if (GetFreeSize() < m_size)
 			{
-				::memcpy_s(&m_buffer[0], dataSize, &m_buffer[m_posRead], dataSize);
-				m_posRead = 0;
-				m_posWrite = dataSize;
+				::memcpy_s(&m_buffer[0], dataSize, &m_buffer[m_idxRead], dataSize);
+				m_idxWrite = 0;
+				m_idxRead = dataSize;
 			}
 		}
 
-		bool ReceiveBuffer::SetPosRead(int32 size)
+		bool ReceiveBuffer::ProcessRead(int32 numBytesRead)
 		{
-			if (size > GetDataSize())
+			if (numBytesRead > GetDataSize())
 				return false;
 
-			m_posRead += size;
+			m_idxRead += numBytesRead;
 
 			return true;
 		}
 
-		bool ReceiveBuffer::SetPosWrite(int32 size)
+		bool ReceiveBuffer::ProcessWrite(int32 numBytesWritten)
 		{
-			if (size > GetFreeSize())
+			if (numBytesWritten > GetFreeSize())
 				return false;
 
-			m_posWrite += size;
+			m_idxWrite += numBytesWritten;
 
 			return true;
 		}

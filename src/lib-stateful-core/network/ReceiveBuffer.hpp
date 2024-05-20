@@ -21,19 +21,19 @@ namespace StatefulCore
 		public:
 			void    Rearrange();
 
-			byte*    GetPosRead() { return &m_buffer[m_posRead]; }
-			byte*    GetPosWrite() { return &m_buffer[m_posWrite]; }
-			int32    GetDataSize() { return m_posWrite - m_posRead; }
-			int32    GetFreeSize() { return m_capacity - m_posWrite; }
+			byte*    GetIndexRead() { return &m_buffer[m_idxRead]; }
+			byte*    GetIndexWrite() { return &m_buffer[m_idxWrite]; }
+			int32    GetDataSize() { return m_idxWrite - m_idxRead; }
+			int32    GetFreeSize() { return m_capacity - m_idxWrite; }
 
-			bool    SetPosRead(int32 size);
-			bool    SetPosWrite(int32 size);
+			bool    ProcessRead(int32 numBytesRead);
+			bool    ProcessWrite(int32 numBytesWritten);
 
 		private:
-			int32                   m_capacity = 0;
-			int32                   m_size = 0;
-			int32                   m_posRead = 0;
-			int32                   m_posWrite = 0;
+			int32    m_capacity = 0;
+			int32    m_size = 0;
+			int32    m_idxRead = 0;
+			int32    m_idxWrite = 0;
 			Memory::Vector<byte>    m_buffer;
 		};
 	}
