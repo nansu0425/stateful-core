@@ -46,10 +46,10 @@ namespace StatefulCore
 			{
 			case WSAECONNRESET:
 			case WSAECONNABORTED:
-				Disconnect(L"HadleError");
+				Disconnect(L"Failed to handle");
 				break;
 			default:
-				std::cout << "errCode: " << errCode << std::endl;
+				std::cout << "Error code: " << errCode << std::endl;
 				break;
 			}
 		}
@@ -253,7 +253,7 @@ namespace StatefulCore
 
 			if (numBytesRecv == 0)
 			{
-				Disconnect(L"The size of data received: 0B");
+				Disconnect(L"Received 0B");
 				return;
 			}
 
@@ -285,7 +285,7 @@ namespace StatefulCore
 
 			if (numBytesSent == 0)
 			{
-				Disconnect(L"The size of data sent: 0B");
+				Disconnect(L"Sent 0B");
 				return;
 			}
 
