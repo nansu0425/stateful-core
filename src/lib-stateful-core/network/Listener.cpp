@@ -83,7 +83,7 @@ namespace StatefulCore
 
 			SPtr<Session> session = serverService->CreateSession();
 			acceptEvent->Init();
-			acceptEvent->SetHandler(session);
+			acceptEvent->SetSession(session);
 
 			DWORD numBytesRecv = 0;
 
@@ -111,7 +111,7 @@ namespace StatefulCore
 				return;
 			}
 
-			SPtr<Session> session = std::static_pointer_cast<Session>(acceptEvent->GetHandler());
+			SPtr<Session> session = acceptEvent->GetSession();
 
 			if (SetUpdateAcceptSocket(session->GetSocket(), m_socket) == false)
 			{
@@ -130,7 +130,7 @@ namespace StatefulCore
 			}
 
 			session->SetAddress(SockaddrWrapper(sockAddr));
-			session->ProcessConnect();
+			session->HandleConnect();
 			RegisterAccept(acceptEvent);
 		}
 	}

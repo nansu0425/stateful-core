@@ -47,6 +47,10 @@ namespace StatefulCore
 		public:
 			AcceptEvent() : IocpEvent(IocpEventType::ACCEPT) { }
 
+		public:
+			SPtr<Session>    GetSession() { return m_session; }
+			void             SetSession(SPtr<Session> session) { m_session = session; }
+
 		private:
 			SPtr<Session>    m_session = nullptr;
 		};
