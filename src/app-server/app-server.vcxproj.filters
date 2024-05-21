@@ -7,6 +7,9 @@
     <Filter Include="precompiled">
       <UniqueIdentifier>{dc9d4df5-ae0a-4124-b540-53d56e56d01d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="network">
+      <UniqueIdentifier>{1554bbff-3dd6-42ed-8b8c-ae5c9a1670f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="precompiled\Pch.cpp">
@@ -15,10 +18,16 @@
     <ClCompile Include="main\Main.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="network\Sessions.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="precompiled\Pch.hpp">
       <Filter>precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="network\Sessions.hpp">
+      <Filter>network</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
