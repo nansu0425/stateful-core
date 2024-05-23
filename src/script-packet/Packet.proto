@@ -1,0 +1,12 @@
+syntax = "proto3";
+package Packet;
+
+message C_ECHO
+{
+	string msg = 1;
+}
+
+message S_ECHO
+{
+	string msg = 1;
+}
