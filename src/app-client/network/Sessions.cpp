@@ -2,6 +2,7 @@
 
 #include <app-client/precompiled/Pch.hpp>
 #include <app-client/network/Sessions.hpp>
+#include <app-client/network/PacketHandler.hpp>
 
 namespace Client
 {
@@ -20,6 +21,11 @@ namespace Client
 		void ServerSession::ProcessPacketRecv(byte* buf, int32 packetSize)
 		{
 			std::cout << "Received packet(" << packetSize << "B)" << std::endl;
+
+			SPtr<StatefulCore::Network::PacketSession> session = GetShared();
+
+			assert(packetSize >= sizeof(StatefulCore::Network::PacketHeader));
+			PacketHandler::HandlePacket(session, buf, packetSize);
 		}
 
 		void ServerSession::ProcessSend(int32 numBytesSent)

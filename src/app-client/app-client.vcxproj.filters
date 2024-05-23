@@ -21,12 +21,24 @@
     <ClCompile Include="network\Sessions.cpp">
       <Filter>network</Filter>
     </ClCompile>
+    <ClCompile Include="network\Packet.pb.cc">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\PacketHandler.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="precompiled\Pch.hpp">
       <Filter>precompiled</Filter>
     </ClInclude>
     <ClInclude Include="network\Sessions.hpp">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\Packet.pb.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\PacketHandler.hpp">
       <Filter>network</Filter>
     </ClInclude>
   </ItemGroup>

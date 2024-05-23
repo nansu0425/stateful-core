@@ -20,6 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main\Main.cpp" />
+    <ClCompile Include="network\Packet.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="network\PacketHandler.cpp" />
     <ClCompile Include="network\Sessions.cpp" />
     <ClCompile Include="precompiled\Pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -29,6 +34,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="network\Packet.pb.h" />
+    <ClInclude Include="network\PacketHandler.hpp" />
     <ClInclude Include="network\Sessions.hpp" />
     <ClInclude Include="precompiled\Pch.hpp" />
   </ItemGroup>
