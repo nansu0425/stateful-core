@@ -85,7 +85,7 @@ namespace StatefulCore
 		struct PacketHeader
 		{
 			uint16 size;
-			uint16 type;
+			uint16 idx;
 		};
 
 		/*---------------------*
