@@ -52,7 +52,8 @@ namespace StatefulCore
 		{
 			W_SPIN_LOCK;
 
-			assert(m_sessions.erase(session) != 0);
+			uint64 elemErased = m_sessions.erase(session);
+			assert(elemErased > 0);
 			m_numCurSessions--;
 		}
 

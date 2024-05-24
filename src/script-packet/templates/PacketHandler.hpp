@@ -119,7 +119,8 @@ namespace Client
 				header->size = packetSize;
 				header->idx = pktHandlerIdx;
 
-				assert(packet.SerializeToArray(&header[1], dataSize));
+				bool serialized = packet.SerializeToArray(&header[1], dataSize);
+				assert(serialized);
 				sendBufChunk->EndWriting(packetSize);
 
 				return sendBufChunk;

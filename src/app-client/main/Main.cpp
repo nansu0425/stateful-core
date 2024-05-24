@@ -18,7 +18,8 @@ int main()
 		Memory::MakeShared<Network::IocpEventForwarder>(),
 		NUM_CLIENTS);
 	
-	assert(service->Launch());
+	bool launched = service->Launch();
+	assert(launched);
 	std::cout << "Launched client service" << std::endl;
 
 	Client::Network::PacketHandler::Init();

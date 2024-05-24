@@ -14,7 +14,8 @@ int main()
 		Memory::MakeShared<Network::IocpEventForwarder>(),
 		100);
 
-	assert(service->Launch());
+	bool launched = service->Launch();
+	assert(launched);
 	std::cout << "Launched server service" << std::endl;
 
 	Server::Network::PacketHandler::Init();

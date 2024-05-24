@@ -14,16 +14,21 @@ namespace StatefulCore
 		void Init()
 		{
 			WSADATA wsaData;
-			assert(::WSAStartup(MAKEWORD(2, 2), OUT & wsaData) == 0);
+			int32 started = ::WSAStartup(MAKEWORD(2, 2), OUT & wsaData);
+			assert(started == 0);
 
 			// Get the function addresses at runtime
 			SOCKET dummySocket = CreateSocket();
-			assert(BindWindowsFunction(
-				dummySocket, WSAID_CONNECTEX, reinterpret_cast<LPVOID*>(&ConnectEx)));
-			assert(BindWindowsFunction(
-				dummySocket, WSAID_DISCONNECTEX, reinterpret_cast<LPVOID*>(&DisconnectEx)));
-			assert(BindWindowsFunction(
-				dummySocket, WSAID_ACCEPTEX, reinterpret_cast<LPVOID*>(&AcceptEx)));
+
+			bool binded = false;
+
+			binded = BindWindowsFunction(dummySocket, WSAID_CONNECTEX, reinterpret_cast<LPVOID*>(&ConnectEx));
+			assert(binded);
+			binded = BindWindowsFunction(dummySocket, WSAID_DISCONNECTEX, reinterpret_cast<LPVOID*>(&DisconnectEx));
+			assert(binded);
+			binded = BindWindowsFunction(dummySocket, WSAID_ACCEPTEX, reinterpret_cast<LPVOID*>(&AcceptEx));
+			assert(binded);
+
 			Close(dummySocket);
 		}
 
