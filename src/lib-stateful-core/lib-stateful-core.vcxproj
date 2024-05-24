@@ -31,6 +31,7 @@
     <ClCompile Include="memory\MemoryPool.cpp" />
     <ClCompile Include="memory\ObjectPool.cpp" />
     <ClCompile Include="multithreading\DeadLockProfiler.cpp" />
+    <ClCompile Include="multithreading\LockQueue.cpp" />
     <ClCompile Include="multithreading\RwLock.cpp" />
     <ClCompile Include="multithreading\ThreadManager.cpp" />
     <ClCompile Include="network\IocpEventForwarder.cpp" />
@@ -62,6 +63,7 @@
     <ClInclude Include="memory\MemoryPool.hpp" />
     <ClInclude Include="memory\ObjectPool.hpp" />
     <ClInclude Include="multithreading\DeadLockProfiler.hpp" />
+    <ClInclude Include="multithreading\LockQueue.hpp" />
     <ClInclude Include="multithreading\RwLock.hpp" />
     <ClInclude Include="multithreading\ThreadManager.hpp" />
     <ClInclude Include="network\IocpEventForwarder.hpp" />
