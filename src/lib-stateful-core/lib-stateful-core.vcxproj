@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="asynchronous\Job.cpp" />
     <ClCompile Include="common\Global.cpp" />
     <ClCompile Include="common\Macros.cpp" />
     <ClCompile Include="common\CommonPch.cpp" />
@@ -49,6 +50,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="asynchronous\Job.hpp" />
     <ClInclude Include="common\Global.hpp" />
     <ClInclude Include="common\Macros.hpp" />
     <ClInclude Include="common\CommonPch.hpp" />

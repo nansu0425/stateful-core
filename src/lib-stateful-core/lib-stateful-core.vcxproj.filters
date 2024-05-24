@@ -16,6 +16,9 @@
     <Filter Include="network">
       <UniqueIdentifier>{36191619-e5b0-4375-8216-f8b3b1e19091}</UniqueIdentifier>
     </Filter>
+    <Filter Include="asynchronous">
+      <UniqueIdentifier>{cc19050a-b041-4116-949a-e47f78f8034b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\CommonPch.cpp">
@@ -87,6 +90,9 @@
     <ClCompile Include="network\Listener.cpp">
       <Filter>network</Filter>
     </ClCompile>
+    <ClCompile Include="asynchronous\Job.cpp">
+      <Filter>asynchronous</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -157,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="network\Listener.hpp">
       <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="asynchronous\Job.hpp">
+      <Filter>asynchronous</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
