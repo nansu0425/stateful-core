@@ -54,7 +54,6 @@ namespace StatefulCore
 				switch (errCode)
 				{
 				case WAIT_TIMEOUT:
-					std::cout << "Timeout occurred.." << std::endl;
 					return false;
 				default:
 					SPtr<IocpEventHandler> handler = passedEvent->GetHandler();
