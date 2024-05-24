@@ -17,7 +17,7 @@ namespace StatefulCore
 		class JobQueue : public std::enable_shared_from_this<JobQueue>
 		{
 		private:
-			friend class JobTimer;
+			friend class ReservedJobQueue;
 			friend class JobQueueManager;
 
 		public:
@@ -40,7 +40,7 @@ namespace StatefulCore
 				SPtr<Job> job = Memory::ObjectPool<Job>::MakeShared(
 					shared_from_this(), std::move(callback));
 
-				g_jobTimer->Reserve(waitingTick, job);
+				g_reservedJobQueue->Reserve(waitingTick, job);
 			}
 
 			template<typename C, typename Ret, typename... Args>
@@ -50,7 +50,7 @@ namespace StatefulCore
 				SPtr<Job> job = Memory::ObjectPool<Job>::MakeShared(
 					shared_from_this(), obj, method, std::forward<Args>(args)...);
 
-				g_jobTimer->Reserve(waitingTick, job);
+				g_reservedJobQueue->Reserve(waitingTick, job);
 			}
 
 			void ClearJobs() { m_jobs.Clear(); }

@@ -23,7 +23,7 @@ namespace StatefulCore
 	namespace Asynchronous
 	{
 		extern class JobQueueManager*      g_jobQueueManager;
-		extern class JobTimer*             g_jobTimer;
+		extern class ReservedJobQueue*     g_reservedJobQueue;
 	}
 
 	class Global
