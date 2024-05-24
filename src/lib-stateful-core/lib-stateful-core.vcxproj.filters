@@ -102,6 +102,9 @@
     <ClCompile Include="asynchronous\JobQueueManager.cpp">
       <Filter>asynchronous</Filter>
     </ClCompile>
+    <ClCompile Include="asynchronous\JobTimer.cpp">
+      <Filter>asynchronous</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -183,6 +186,9 @@
       <Filter>asynchronous</Filter>
     </ClInclude>
     <ClInclude Include="asynchronous\JobQueueManager.hpp">
+      <Filter>asynchronous</Filter>
+    </ClInclude>
+    <ClInclude Include="asynchronous\JobTimer.hpp">
       <Filter>asynchronous</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,6 +8,7 @@
 #include <lib-stateful-core/network/SendBufferManager.hpp>
 #include <lib-stateful-core/network/SocketFunctions.hpp>
 #include <lib-stateful-core/asynchronous/JobQueueManager.hpp>
+#include <lib-stateful-core/asynchronous/JobTimer.hpp>
 
 namespace StatefulCore
 {
@@ -30,6 +31,7 @@ namespace StatefulCore
 	namespace Asynchronous
 	{
 		JobQueueManager* g_jobQueueManager;
+		JobTimer*        g_jobTimer;
 	}
 	
 	Global::Global()
@@ -40,6 +42,7 @@ namespace StatefulCore
 		Network::g_sendBufferManager = new Network::SendBufferManager();
 		Network::Init();
 		Asynchronous::g_jobQueueManager = new Asynchronous::JobQueueManager();
+		Asynchronous::g_jobTimer = new Asynchronous::JobTimer();
 	}
 
 	Global::~Global()
@@ -50,6 +53,7 @@ namespace StatefulCore
 		delete Network::g_sendBufferManager;
 		Network::Clear();
 		delete Asynchronous::g_jobQueueManager;
+		delete Asynchronous::g_jobTimer;
 	}
 
 	Global g_global;

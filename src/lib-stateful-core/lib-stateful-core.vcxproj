@@ -22,6 +22,7 @@
     <ClCompile Include="asynchronous\Job.cpp" />
     <ClCompile Include="asynchronous\JobQueue.cpp" />
     <ClCompile Include="asynchronous\JobQueueManager.cpp" />
+    <ClCompile Include="asynchronous\JobTimer.cpp" />
     <ClCompile Include="common\Global.cpp" />
     <ClCompile Include="common\Macros.cpp" />
     <ClCompile Include="common\CommonPch.cpp" />
@@ -56,6 +57,7 @@
     <ClInclude Include="asynchronous\Job.hpp" />
     <ClInclude Include="asynchronous\JobQueue.hpp" />
     <ClInclude Include="asynchronous\JobQueueManager.hpp" />
+    <ClInclude Include="asynchronous\JobTimer.hpp" />
     <ClInclude Include="common\Global.hpp" />
     <ClInclude Include="common\Macros.hpp" />
     <ClInclude Include="common\CommonPch.hpp" />

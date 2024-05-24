@@ -13,7 +13,7 @@ namespace StatefulCore
 			const int32 prevNum = m_numJobs.fetch_add(1);
 			m_jobs.Push(job);
 
-			// job is first item.
+			// The job is first item.
 			if (prevNum == 0)
 			{
 				if (l_curJobQueue == nullptr && pushOnly == false)
@@ -40,11 +40,21 @@ namespace StatefulCore
 				for (int32 i = 0; i < numJobs; i++)
 					jobs[i]->Execute();
 
-				// queue is empty.
+				// Queue is empty.
 				if (m_numJobs.fetch_sub(numJobs) == numJobs)
 				{
 					l_curJobQueue = nullptr;
 					return;
+				}
+
+				const Tick64 now = ::GetTickCount64();
+
+				// Worker thread end time has been exceeded.
+				if (now >= l_workerEndTick)
+				{
+					l_curJobQueue = nullptr;
+					g_jobQueueManager->Push(shared_from_this());
+					break;
 				}
 			}
 		}

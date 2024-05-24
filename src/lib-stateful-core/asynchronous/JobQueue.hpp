@@ -4,6 +4,7 @@
 
 #include <lib-stateful-core/multithreading/LockQueue.hpp>
 #include <lib-stateful-core/asynchronous/Job.hpp>
+#include <lib-stateful-core/asynchronous/JobTimer.hpp>
 
 namespace StatefulCore
 {
@@ -15,17 +16,40 @@ namespace StatefulCore
 
 		class JobQueue : public std::enable_shared_from_this<JobQueue>
 		{
+		private:
+			friend class JobTimer;
+
 		public:
 			void DoAsync(CallbackFunc&& callback)
 			{
-				Push(Memory::ObjectPool<Job>::MakeShared(std::move(callback)));
+				Push(Memory::ObjectPool<Job>::MakeShared(shared_from_this(), std::move(callback)));
 			}
 
 			template<typename C, typename Ret, typename... Args>
 			void DoAsync(Ret(C::* method)(Args...), Args... args)
 			{
-				SPtr<C> owner = std::static_pointer_cast<C>(shared_from_this());
-				Push(Memory::ObjectPool<Job>::MakeShared(owner, method, std::forward<Args>(args)...));
+				SPtr<C> obj = std::static_pointer_cast<C>(shared_from_this());
+
+				Push(Memory::ObjectPool<Job>::MakeShared(
+					shared_from_this(), obj, method, std::forward<Args>(args)...));
+			}
+
+			void DoAsync(Tick64 waitingTick, CallbackFunc&& callback)
+			{
+				SPtr<Job> job = Memory::ObjectPool<Job>::MakeShared(
+					shared_from_this(), std::move(callback));
+
+				g_jobTimer->Reserve(waitingTick, job);
+			}
+
+			template<typename C, typename Ret, typename... Args>
+			void DoAsync(Tick64 waitingTick, Ret(C::* method)(Args...), Args... args)
+			{
+				SPtr<C> obj = std::static_pointer_cast<C>(shared_from_this());
+				SPtr<Job> job = Memory::ObjectPool<Job>::MakeShared(
+					shared_from_this(), obj, method, std::forward<Args>(args)...);
+
+				g_jobTimer->Reserve(waitingTick, job);
 			}
 
 			void ClearJobs() { m_jobs.Clear(); }
