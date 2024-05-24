@@ -18,6 +18,7 @@ namespace StatefulCore
 		{
 		private:
 			friend class JobTimer;
+			friend class JobQueueManager;
 
 		public:
 			void DoAsync(CallbackFunc&& callback)

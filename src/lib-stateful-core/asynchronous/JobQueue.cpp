@@ -49,8 +49,8 @@ namespace StatefulCore
 
 				const Tick64 now = ::GetTickCount64();
 
-				// Worker thread end time has been exceeded.
-				if (now >= l_workerEndTick)
+				// Main cycle end time has been exceeded.
+				if (now >= l_mainCycleEnd)
 				{
 					l_curJobQueue = nullptr;
 					g_jobQueueManager->Push(shared_from_this());

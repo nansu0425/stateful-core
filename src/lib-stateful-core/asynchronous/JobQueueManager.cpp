@@ -16,5 +16,21 @@ namespace StatefulCore
 		{
 			return m_jobQueues.Pop();
 		}
+
+		void JobQueueManager::ProcessJobQueues()
+		{
+			while (true)
+			{
+				Tick64 now = ::GetTickCount64();
+				if (now > l_mainCycleEnd)
+					break;
+
+				SPtr<JobQueue> jobQueue = g_jobQueueManager->Pop();
+				if (jobQueue == nullptr)
+					break;
+
+				jobQueue->Execute();
+			}
+		}
 	}
 }

@@ -18,6 +18,8 @@ namespace StatefulCore
 			void              Push(SPtr<JobQueue> jobQueue);
 			SPtr<JobQueue>    Pop();
 
+			static void       ProcessJobQueues();
+
 		private:
 			Multithreading::LockQueue<SPtr<JobQueue>> m_jobQueues;
 		};

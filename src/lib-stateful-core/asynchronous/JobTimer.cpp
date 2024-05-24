@@ -7,15 +7,15 @@ namespace StatefulCore
 {
 	namespace Asynchronous
 	{
-		void JobTimer::Reserve(Tick64 waitingTick, SPtr<Job> job)
+		void JobTimer::Reserve(Tick64 wait, SPtr<Job> job)
 		{
-			const Tick64 tickExecute = ::GetTickCount64() + waitingTick;
+			const Tick64 execute = ::GetTickCount64() + wait;
 
 			W_SPIN_LOCK;
-			m_items.push(TimerItem{ tickExecute, job });
+			m_items.push(TimerItem{ execute, job });
 		}
 
-		void JobTimer::Distribute(Tick64 curTick)
+		void JobTimer::Distribute2JobQueues(Tick64 now)
 		{
 			// Allow only single thread for maintaining job push order.
 			if (m_distributing.exchange(true) == true)
@@ -29,7 +29,7 @@ namespace StatefulCore
 				while (m_items.empty() == false)
 				{
 					const TimerItem& item = m_items.top();
-					if (curTick < item.tickExecute)
+					if (now < item.execute)
 						break;
 
 					itemsExec.push_back(item);
@@ -44,6 +44,13 @@ namespace StatefulCore
 			}
 
 			m_distributing.store(false);
+		}
+
+		void JobTimer::Distribute2JobQueues()
+		{
+			const Tick64 now = ::GetTickCount64();
+
+			g_jobTimer->Distribute2JobQueues(now);
 		}
 	}
 }

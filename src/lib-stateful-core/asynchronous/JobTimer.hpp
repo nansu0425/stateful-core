@@ -8,12 +8,12 @@ namespace StatefulCore
 	{
 		struct TimerItem
 		{
-			uint64       tickExecute = 0;
+			Tick64       execute = 0;
 			SPtr<Job>    job = nullptr;
 
 			bool operator<(const TimerItem& other) const
 			{
-				return tickExecute > other.tickExecute;
+				return execute > other.execute;
 			}
 		};
 
@@ -24,8 +24,10 @@ namespace StatefulCore
 		class JobTimer
 		{
 		public:
-			void    Reserve(uint64 waitingTick, SPtr<Job> job);
-			void    Distribute(uint64 now);
+			void    Reserve(Tick64 wait, SPtr<Job> job);
+			void    Distribute2JobQueues(Tick64 now);
+
+			static void    Distribute2JobQueues();
 
 		private:
 			USE_RW_SPIN_LOCK;
