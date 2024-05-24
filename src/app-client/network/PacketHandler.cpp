@@ -2,7 +2,6 @@
 
 #include <app-client/precompiled/Pch.hpp>
 #include <app-client/network/PacketHandler.hpp>
-#include <lib-stateful-core/multithreading/ThreadManager.hpp>
 
 namespace Client
 {
@@ -17,11 +16,18 @@ namespace Client
 			return true;
 		}
 
-
-		bool Process_S_ECHO(SPtr<CorePktSession>& session, Packet::S_ECHO& packet)
+		bool Process_S_CREATE_ROOM(SPtr<CorePktSession>& session, Packet::S_CREATE_ROOM& packet)
 		{
-			std::cout << "S_ECHO [" << packet.msg() << "]" << std::endl;
+			return true;
+		}
 
+		bool Process_S_ENTER_ROOM(SPtr<CorePktSession>& session, Packet::S_ENTER_ROOM& packet)
+		{
+			return true;
+		}
+
+		bool Process_S_CHAT(SPtr<CorePktSession>& session, Packet::S_CHAT& packet)
+		{
 			return true;
 		}
 	}

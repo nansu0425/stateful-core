@@ -3,8 +3,6 @@
 #include <app-server/precompiled/Pch.hpp>
 #include <app-server/network/Sessions.hpp>
 #include <app-server/network/PacketHandler.hpp>
-#include <lib-stateful-core/network/SendBufferManager.hpp>
-#include <lib-stateful-core/network/Service.hpp>
 
 namespace Server
 {

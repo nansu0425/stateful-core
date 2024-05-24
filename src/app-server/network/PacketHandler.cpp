@@ -2,7 +2,6 @@
 
 #include <app-server/precompiled/Pch.hpp>
 #include <app-server/network/PacketHandler.hpp>
-#include <lib-stateful-core/network/Service.hpp>
 
 namespace Server
 {
@@ -17,16 +16,18 @@ namespace Server
 			return true;
 		}
 
-		bool Process_C_ECHO(SPtr<CorePktSession>& session, Packet::C_ECHO& packet)
+		bool Process_C_CREATE_ROOM(SPtr<CorePktSession>& session, Packet::C_CREATE_ROOM& packet)
 		{
-			std::cout << "C_ECHO [" << packet.msg() << "]" << std::endl;
+			return true;
+		}
 
-			Packet::S_ECHO pktSend;
-			pktSend.set_msg(packet.msg());
+		bool Process_C_ENTER_ROOM(SPtr<CorePktSession>& session, Packet::C_ENTER_ROOM& packet)
+		{
+			return true;
+		}
 
-			auto sendBufChunk = PacketHandler::Serialize2SendBufChunk(pktSend);
-			session->GetOwner()->Broadcast(sendBufChunk);
-
+		bool Process_C_CHAT(SPtr<CorePktSession>& session, Packet::C_CHAT& packet)
+		{
 			return true;
 		}
 	}

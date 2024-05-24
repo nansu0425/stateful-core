@@ -17,14 +17,20 @@ namespace Client
 		{
 			enum : uint16
 			{
-				C_ECHO = 1000,
-				S_ECHO = 1001,
+				C_CREATE_ROOM = 1000,
+				S_CREATE_ROOM = 1001,
+				C_ENTER_ROOM = 1002,
+				S_ENTER_ROOM = 1003,
+				C_CHAT = 1004,
+				S_CHAT = 1005,
 			};
 		}
 
 		// Packet processing functions
 		bool Process_INVALID(SPtr<CorePktSession>& session, byte* buffer, uint32 size);
-		bool Process_S_ECHO(SPtr<CorePktSession>& session, Packet::S_ECHO& packet);
+		bool Process_S_CREATE_ROOM(SPtr<CorePktSession>& session, Packet::S_CREATE_ROOM& packet);
+		bool Process_S_ENTER_ROOM(SPtr<CorePktSession>& session, Packet::S_ENTER_ROOM& packet);
+		bool Process_S_CHAT(SPtr<CorePktSession>& session, Packet::S_CHAT& packet);
 
 		/*---------------------*
 		 *    PacketHandler    *
@@ -47,11 +53,25 @@ namespace Client
 				for (int32 i = 0; i < UINT16_MAX; i++)
 					g_packetHandlerTable[i] = Process_INVALID;
 
-				g_packetHandlerTable[PacketHandlerIdx::S_ECHO] = 
+				g_packetHandlerTable[PacketHandlerIdx::S_CREATE_ROOM] = 
 					[](SPtr<CorePktSession>& session, byte* buffer, uint32 size)
 					{
-						return HandlePacket<Packet::S_ECHO>(
-							Process_S_ECHO, session, buffer, size);
+						return HandlePacket<Packet::S_CREATE_ROOM>(
+							Process_S_CREATE_ROOM, session, buffer, size);
+					};
+
+				g_packetHandlerTable[PacketHandlerIdx::S_ENTER_ROOM] = 
+					[](SPtr<CorePktSession>& session, byte* buffer, uint32 size)
+					{
+						return HandlePacket<Packet::S_ENTER_ROOM>(
+							Process_S_ENTER_ROOM, session, buffer, size);
+					};
+
+				g_packetHandlerTable[PacketHandlerIdx::S_CHAT] = 
+					[](SPtr<CorePktSession>& session, byte* buffer, uint32 size)
+					{
+						return HandlePacket<Packet::S_CHAT>(
+							Process_S_CHAT, session, buffer, size);
 					};
 			}
 
@@ -62,9 +82,19 @@ namespace Client
 				return g_packetHandlerTable[header->idx](session, buffer, size);
 			}
 
-			static SPtr<SendBufChunk> Serialize2SendBufChunk(Packet::C_ECHO& packet)
+			static SPtr<SendBufChunk> Serialize2SendBufChunk(Packet::C_CREATE_ROOM& packet)
 			{
-				return Serialize2SendBufChunk(packet, PacketHandlerIdx::C_ECHO);
+				return Serialize2SendBufChunk(packet, PacketHandlerIdx::C_CREATE_ROOM);
+			}
+
+			static SPtr<SendBufChunk> Serialize2SendBufChunk(Packet::C_ENTER_ROOM& packet)
+			{
+				return Serialize2SendBufChunk(packet, PacketHandlerIdx::C_ENTER_ROOM);
+			}
+
+			static SPtr<SendBufChunk> Serialize2SendBufChunk(Packet::C_CHAT& packet)
+			{
+				return Serialize2SendBufChunk(packet, PacketHandlerIdx::C_CHAT);
 			}
 
 		private:

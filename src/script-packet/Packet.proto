@@ -1,12 +1,49 @@
 syntax = "proto3";
 package Packet;
 
-message C_ECHO
+message C_CREATE_ROOM
+{
+	string roomName = 1;
+}
+
+message S_CREATE_ROOM
+{
+	enum FailType
+	{
+		FAIL_TYPE_UNSPEC = 0;
+		FAIL_TYPE_EXIST = 1;
+		FAIL_TYPE_ELSE = 2;
+	}
+
+	optional FailType causeFail = 1;
+	int32 roomId = 2;
+}
+
+message C_ENTER_ROOM
+{
+	int32 roomId = 1;
+}
+
+message S_ENTER_ROOM
+{
+	enum FailType
+	{
+		FAIL_TYPE_UNSPEC = 0;
+		FAIL_TYPE_NOT_EXIST = 1;
+		FAIL_TYPE_ELSE = 2;
+	}
+
+	optional FailType causeFail = 1;
+	int32 userId = 2;
+}
+
+message C_CHAT
 {
 	string msg = 1;
 }
 
-message S_ECHO
+message S_CHAT
 {
-	string msg = 1;
+	int32 userId = 1;
+	string msg = 2;
 }
