@@ -364,4 +364,6 @@ FodyWeavers.xsd
 
 # Visual Studio Code settings
 .vscode/
+
+# Exe files
 /src/script-packet/PktHandlerGen.exe
