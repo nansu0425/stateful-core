@@ -4,7 +4,7 @@
 
 #include <lib-stateful-core/multithreading/LockQueue.hpp>
 #include <lib-stateful-core/asynchronous/Job.hpp>
-#include <lib-stateful-core/asynchronous/JobTimer.hpp>
+#include <lib-stateful-core/asynchronous/ReservedJobQueue.hpp>
 
 namespace StatefulCore
 {
