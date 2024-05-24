@@ -5,8 +5,32 @@
 #include <app-client/network/PacketHandler.hpp>
 #include <lib-stateful-core/network/Service.hpp>
 #include <lib-stateful-core/multithreading/ThreadManager.hpp>
+#include <lib-stateful-core/asynchronous/ReservedJobQueue.hpp>
+#include <lib-stateful-core/asynchronous/JobQueueManager.hpp>
 
 const uint64 NUM_CLIENTS = 10;
+
+enum TickConst : Tick64
+{
+	MAIN_CYCLE = 64
+};
+
+void MainCycleLoop(SPtr<Network::ClientService>& service)
+{
+	while (true)
+	{
+		Asynchronous::l_mainCycleEnd = ::GetTickCount64() + TickConst::MAIN_CYCLE;
+
+		// Handle iocp event
+		service->GetIocpEventForwarder()->ForwardEvent2Handler(10);
+
+		// Distribute reserved jobs to job queue manager
+		Asynchronous::ReservedJobQueue::Distribute2JobQueueManager();
+
+		// Process job queues
+		Asynchronous::JobQueueManager::ProcessJobQueues();
+	}
+}
 
 int main()
 {
@@ -27,15 +51,14 @@ int main()
 
 	for (int32 i = 0; i < 4; i++)
 	{
-		Multithreading::g_threadManager->Launch([=]()
+		Multithreading::g_threadManager->Launch([&service]()
 			{
-				while (true)
-					service->GetIocpEventForwarder()->ForwardEvent2Handler();
+				MainCycleLoop(service);
 			});
 	}
-	std::cout << "Launched ForwardEvent2Handler() loop threads" << std::endl;
+	std::cout << "Launched main cycle loop threads" << std::endl;
 
-	Multithreading::g_threadManager->Launch([service]()
+	Multithreading::g_threadManager->Launch([&service]()
 		{
 			while (true)
 			{
