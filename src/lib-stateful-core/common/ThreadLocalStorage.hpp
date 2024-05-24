@@ -16,4 +16,11 @@ namespace StatefulCore
 
 		extern thread_local SPtr<SendBuffer>    l_sendBuf;
 	}
+
+	namespace Asynchronous
+	{
+		class JobQueue;
+
+		extern thread_local SPtr<JobQueue>    l_curJobQueue;
+	}
 }

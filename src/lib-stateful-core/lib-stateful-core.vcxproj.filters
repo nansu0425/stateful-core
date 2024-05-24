@@ -96,6 +96,12 @@
     <ClCompile Include="multithreading\LockQueue.cpp">
       <Filter>multithreading</Filter>
     </ClCompile>
+    <ClCompile Include="asynchronous\JobQueue.cpp">
+      <Filter>asynchronous</Filter>
+    </ClCompile>
+    <ClCompile Include="asynchronous\JobQueueManager.cpp">
+      <Filter>asynchronous</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\CommonPch.hpp">
@@ -172,6 +178,12 @@
     </ClInclude>
     <ClInclude Include="multithreading\LockQueue.hpp">
       <Filter>multithreading</Filter>
+    </ClInclude>
+    <ClInclude Include="asynchronous\JobQueue.hpp">
+      <Filter>asynchronous</Filter>
+    </ClInclude>
+    <ClInclude Include="asynchronous\JobQueueManager.hpp">
+      <Filter>asynchronous</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

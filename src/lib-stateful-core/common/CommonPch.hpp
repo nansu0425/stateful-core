@@ -74,3 +74,6 @@
 #include <lib-stateful-core/network/ReceiveBuffer.hpp>
 #include <lib-stateful-core/network/SendBufferManager.hpp>
 #include <lib-stateful-core/network/Session.hpp>
+
+// Asynchronous
+#include <lib-stateful-core/asynchronous/JobQueue.hpp>
