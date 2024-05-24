@@ -22,6 +22,6 @@ namespace StatefulCore
 		class JobQueue;
 
 		extern thread_local SPtr<JobQueue>    l_curJobQueue;
-		extern thread_local Tick64            l_workerEndTick;
+		extern thread_local Tick64            l_mainCycleEnd;
 	}
 }

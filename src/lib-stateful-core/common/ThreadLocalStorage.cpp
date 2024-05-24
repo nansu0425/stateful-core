@@ -19,7 +19,7 @@ namespace StatefulCore
 	namespace Asynchronous
 	{
 		thread_local SPtr<JobQueue>    l_curJobQueue = nullptr;
-		thread_local Tick64            l_workerEndTick = 0;
+		thread_local Tick64            l_mainCycleEnd = 0;
 	}
 }
 
