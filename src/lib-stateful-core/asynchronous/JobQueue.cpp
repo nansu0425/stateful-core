@@ -13,10 +13,10 @@ namespace StatefulCore
 			const int32 prevNum = m_numJobs.fetch_add(1);
 			m_jobs.Push(job);
 
-			// The job is first item.
+			// If the job is first item
 			if (prevNum == 0)
 			{
-				if (l_curJobQueue == nullptr && pushOnly == false)
+				if (l_execJobQueue == nullptr && pushOnly == false)
 				{
 					Execute();
 				}
@@ -29,7 +29,7 @@ namespace StatefulCore
 
 		void JobQueue::Execute()
 		{
-			l_curJobQueue = shared_from_this();
+			l_execJobQueue = shared_from_this();
 
 			while (true)
 			{
@@ -40,19 +40,19 @@ namespace StatefulCore
 				for (int32 i = 0; i < numJobs; i++)
 					jobs[i]->Execute();
 
-				// Queue is empty.
+				// If queue is empty
 				if (m_numJobs.fetch_sub(numJobs) == numJobs)
 				{
-					l_curJobQueue = nullptr;
-					return;
+					l_execJobQueue = nullptr;
+					break;
 				}
 
 				const Tick64 now = ::GetTickCount64();
 
-				// Main cycle end time has been exceeded.
+				// If main cycle end time has been exceeded
 				if (now >= l_mainCycleEnd)
 				{
-					l_curJobQueue = nullptr;
+					l_execJobQueue = nullptr;
 					g_jobQueueManager->Push(shared_from_this());
 					break;
 				}
