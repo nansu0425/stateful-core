@@ -29,10 +29,10 @@ namespace StatefulCore
 			template<typename C, typename Ret, typename... Args>
 			void DoAsync(Ret(C::* method)(Args...), Args... args)
 			{
-				SPtr<C> obj = std::static_pointer_cast<C>(shared_from_this());
+				SPtr<C> self = std::static_pointer_cast<C>(shared_from_this());
 
 				Push(Memory::ObjectPool<Job>::MakeShared(
-					shared_from_this(), obj, method, std::forward<Args>(args)...));
+					shared_from_this(), self, method, std::forward<Args>(args)...));
 			}
 
 			void DoAsync(Tick64 waitingTick, CallbackFunc&& callback)
@@ -46,9 +46,9 @@ namespace StatefulCore
 			template<typename C, typename Ret, typename... Args>
 			void DoAsync(Tick64 waitingTick, Ret(C::* method)(Args...), Args... args)
 			{
-				SPtr<C> obj = std::static_pointer_cast<C>(shared_from_this());
+				SPtr<C> self = std::static_pointer_cast<C>(shared_from_this());
 				SPtr<Job> job = Memory::ObjectPool<Job>::MakeShared(
-					shared_from_this(), obj, method, std::forward<Args>(args)...);
+					shared_from_this(), self, method, std::forward<Args>(args)...);
 
 				g_reservedJobQueue->Reserve(waitingTick, job);
 			}
