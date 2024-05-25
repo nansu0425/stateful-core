@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="contents\Room.cpp" />
+    <ClCompile Include="contents\RoomManager.cpp" />
+    <ClCompile Include="contents\User.cpp" />
     <ClCompile Include="main\Main.cpp" />
     <ClCompile Include="network\Packet.pb.cc">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
@@ -39,6 +42,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="contents\Room.hpp" />
+    <ClInclude Include="contents\RoomManager.hpp" />
+    <ClInclude Include="contents\User.hpp" />
     <ClInclude Include="network\Packet.pb.h" />
     <ClInclude Include="network\PacketHandler.hpp" />
     <ClInclude Include="network\Sessions.hpp" />

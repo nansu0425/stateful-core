@@ -10,6 +10,9 @@
     <Filter Include="network">
       <UniqueIdentifier>{1554bbff-3dd6-42ed-8b8c-ae5c9a1670f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="contents">
+      <UniqueIdentifier>{2b7ccf44-de1a-437f-963c-a870f428b11f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="precompiled\Pch.cpp">
@@ -27,6 +30,15 @@
     <ClCompile Include="network\Packet.pb.cc">
       <Filter>network</Filter>
     </ClCompile>
+    <ClCompile Include="contents\Room.cpp">
+      <Filter>contents</Filter>
+    </ClCompile>
+    <ClCompile Include="contents\User.cpp">
+      <Filter>contents</Filter>
+    </ClCompile>
+    <ClCompile Include="contents\RoomManager.cpp">
+      <Filter>contents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="precompiled\Pch.hpp">
@@ -40,6 +52,15 @@
     </ClInclude>
     <ClInclude Include="network\Packet.pb.h">
       <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="contents\Room.hpp">
+      <Filter>contents</Filter>
+    </ClInclude>
+    <ClInclude Include="contents\User.hpp">
+      <Filter>contents</Filter>
+    </ClInclude>
+    <ClInclude Include="contents\RoomManager.hpp">
+      <Filter>contents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
