@@ -24,6 +24,7 @@ namespace Server
 			}
 
 		public:
+			SPtr<Server::Contents::User>    GetUser() { return m_user; }
 			void    SetUser(SPtr<Server::Contents::User> user) { m_user = user; }
 
 		protected:

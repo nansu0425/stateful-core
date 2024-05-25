@@ -10,7 +10,7 @@
 
 enum TickConst : Tick64
 {
-	MAIN_CYCLE = 64
+	MAIN_CYCLE = 100
 };
 
 void MainCycleLoop(SPtr<Network::ServerService>& service)
@@ -36,7 +36,7 @@ int main()
 		Network::SockaddrWrapper(L"127.0.0.1", 7720),
 		Memory::MakeShared<Server::Network::ClientSession>,
 		Memory::MakeShared<Network::IocpEventForwarder>(),
-		100);
+		1000);
 
 	bool launched = service->Launch();
 	assert(launched);
@@ -45,7 +45,7 @@ int main()
 	Server::Network::PacketHandler::Init();
 	std::cout << "Initialized packet handler" << std::endl;
 
-	for (int32 i = 0; i < 4; i++)
+	for (int32 i = 0; i < Thread::hardware_concurrency() / 2; i++)
 	{
 		Multithreading::g_threadManager->Launch([&service]()
 			{

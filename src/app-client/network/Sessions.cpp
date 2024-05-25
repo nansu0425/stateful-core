@@ -4,6 +4,8 @@
 #include <app-client/network/Sessions.hpp>
 #include <app-client/network/PacketHandler.hpp>
 
+extern Memory::String g_roomName;
+
 namespace Client
 {
 	namespace Network
@@ -11,6 +13,12 @@ namespace Client
 		void ServerSession::ProcessConnect()
 		{
 			std::cout << "Connected to server!" << std::endl;
+
+			Packet::C_CREATE_ROOM pktSend;
+			pktSend.set_room_name(g_roomName.c_str());
+
+			auto sendBufChunk = PacketHandler::Serialize2SendBufChunk(pktSend);
+			Send(sendBufChunk);
 		}
 
 		void ServerSession::ProcessDisconnect()
@@ -20,7 +28,7 @@ namespace Client
 
 		void ServerSession::ProcessPacketRecv(byte* buf, int32 packetSize)
 		{
-			std::cout << "Received packet(" << packetSize << "B)" << std::endl;
+			// std::cout << "Received packet(" << packetSize << "B)" << std::endl;
 
 			SPtr<StatefulCore::Network::PacketSession> session = GetShared();
 
@@ -30,7 +38,7 @@ namespace Client
 
 		void ServerSession::ProcessSend(int32 numBytesSent)
 		{
-			std::cout << "Sent data(" << numBytesSent << "B)" << std::endl;
+			// std::cout << "Sent data(" << numBytesSent << "B)" << std::endl;
 		}
 	}
 }

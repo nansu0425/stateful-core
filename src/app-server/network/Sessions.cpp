@@ -25,7 +25,7 @@ namespace Server
 
 		void ClientSession::ProcessPacketRecv(byte* buf, int32 packetSize)
 		{
-			std::cout << "Received packet(" << packetSize << "B)" << std::endl;
+			// std::cout << "Received packet(" << packetSize << "B)" << std::endl;
 
 			SPtr<StatefulCore::Network::PacketSession> session = GetShared();
 
@@ -35,7 +35,7 @@ namespace Server
 
 		void ClientSession::ProcessSend(int32 numBytesSent)
 		{
-			std::cout << "Sent data(" << numBytesSent << "B)" << std::endl;
+			// std::cout << "Sent data(" << numBytesSent << "B)" << std::endl;
 		}
 	}
 }

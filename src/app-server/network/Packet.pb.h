@@ -75,57 +75,109 @@ template<> ::Packet::S_ENTER_ROOM* Arena::CreateMaybeMessage<::Packet::S_ENTER_R
 PROTOBUF_NAMESPACE_CLOSE
 namespace Packet {
 
-enum S_CREATE_ROOM_FailType : int {
-  S_CREATE_ROOM_FailType_FAIL_TYPE_UNSPEC = 0,
-  S_CREATE_ROOM_FailType_FAIL_TYPE_EXIST = 1,
-  S_CREATE_ROOM_FailType_FAIL_TYPE_ELSE = 2,
-  S_CREATE_ROOM_FailType_S_CREATE_ROOM_FailType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  S_CREATE_ROOM_FailType_S_CREATE_ROOM_FailType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+enum C_CREATE_ROOM_FAIL_TYPE : int {
+  C_CREATE_ROOM_FAIL_TYPE_UNSPEC = 0,
+  C_CREATE_ROOM_FAIL_TYPE_ASYNC = 1,
+  C_CREATE_ROOM_FAIL_TYPE_EXIST = 2,
+  C_CREATE_ROOM_FAIL_TYPE_C_CREATE_ROOM_FAIL_TYPE_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  C_CREATE_ROOM_FAIL_TYPE_C_CREATE_ROOM_FAIL_TYPE_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
-bool S_CREATE_ROOM_FailType_IsValid(int value);
-constexpr S_CREATE_ROOM_FailType S_CREATE_ROOM_FailType_FailType_MIN = S_CREATE_ROOM_FailType_FAIL_TYPE_UNSPEC;
-constexpr S_CREATE_ROOM_FailType S_CREATE_ROOM_FailType_FailType_MAX = S_CREATE_ROOM_FailType_FAIL_TYPE_ELSE;
-constexpr int S_CREATE_ROOM_FailType_FailType_ARRAYSIZE = S_CREATE_ROOM_FailType_FailType_MAX + 1;
+bool C_CREATE_ROOM_FAIL_TYPE_IsValid(int value);
+constexpr C_CREATE_ROOM_FAIL_TYPE C_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_MIN = C_CREATE_ROOM_FAIL_TYPE_UNSPEC;
+constexpr C_CREATE_ROOM_FAIL_TYPE C_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_MAX = C_CREATE_ROOM_FAIL_TYPE_EXIST;
+constexpr int C_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_ARRAYSIZE = C_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* S_CREATE_ROOM_FailType_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* C_CREATE_ROOM_FAIL_TYPE_descriptor();
 template<typename T>
-inline const std::string& S_CREATE_ROOM_FailType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, S_CREATE_ROOM_FailType>::value ||
+inline const std::string& C_CREATE_ROOM_FAIL_TYPE_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, C_CREATE_ROOM_FAIL_TYPE>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function S_CREATE_ROOM_FailType_Name.");
+    "Incorrect type passed to function C_CREATE_ROOM_FAIL_TYPE_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    S_CREATE_ROOM_FailType_descriptor(), enum_t_value);
+    C_CREATE_ROOM_FAIL_TYPE_descriptor(), enum_t_value);
 }
-inline bool S_CREATE_ROOM_FailType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, S_CREATE_ROOM_FailType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<S_CREATE_ROOM_FailType>(
-    S_CREATE_ROOM_FailType_descriptor(), name, value);
+inline bool C_CREATE_ROOM_FAIL_TYPE_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, C_CREATE_ROOM_FAIL_TYPE* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<C_CREATE_ROOM_FAIL_TYPE>(
+    C_CREATE_ROOM_FAIL_TYPE_descriptor(), name, value);
 }
-enum S_ENTER_ROOM_FailType : int {
-  S_ENTER_ROOM_FailType_FAIL_TYPE_UNSPEC = 0,
-  S_ENTER_ROOM_FailType_FAIL_TYPE_NOT_EXIST = 1,
-  S_ENTER_ROOM_FailType_FAIL_TYPE_ELSE = 2,
-  S_ENTER_ROOM_FailType_S_ENTER_ROOM_FailType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  S_ENTER_ROOM_FailType_S_ENTER_ROOM_FailType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+enum S_CREATE_ROOM_FAIL_TYPE : int {
+  S_CREATE_ROOM_FAIL_TYPE_UNSPEC = 0,
+  S_CREATE_ROOM_FAIL_TYPE_ASYNC = 1,
+  S_CREATE_ROOM_FAIL_TYPE_EXIST = 2,
+  S_CREATE_ROOM_FAIL_TYPE_S_CREATE_ROOM_FAIL_TYPE_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  S_CREATE_ROOM_FAIL_TYPE_S_CREATE_ROOM_FAIL_TYPE_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
-bool S_ENTER_ROOM_FailType_IsValid(int value);
-constexpr S_ENTER_ROOM_FailType S_ENTER_ROOM_FailType_FailType_MIN = S_ENTER_ROOM_FailType_FAIL_TYPE_UNSPEC;
-constexpr S_ENTER_ROOM_FailType S_ENTER_ROOM_FailType_FailType_MAX = S_ENTER_ROOM_FailType_FAIL_TYPE_ELSE;
-constexpr int S_ENTER_ROOM_FailType_FailType_ARRAYSIZE = S_ENTER_ROOM_FailType_FailType_MAX + 1;
+bool S_CREATE_ROOM_FAIL_TYPE_IsValid(int value);
+constexpr S_CREATE_ROOM_FAIL_TYPE S_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_MIN = S_CREATE_ROOM_FAIL_TYPE_UNSPEC;
+constexpr S_CREATE_ROOM_FAIL_TYPE S_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_MAX = S_CREATE_ROOM_FAIL_TYPE_EXIST;
+constexpr int S_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_ARRAYSIZE = S_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* S_ENTER_ROOM_FailType_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* S_CREATE_ROOM_FAIL_TYPE_descriptor();
 template<typename T>
-inline const std::string& S_ENTER_ROOM_FailType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, S_ENTER_ROOM_FailType>::value ||
+inline const std::string& S_CREATE_ROOM_FAIL_TYPE_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, S_CREATE_ROOM_FAIL_TYPE>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function S_ENTER_ROOM_FailType_Name.");
+    "Incorrect type passed to function S_CREATE_ROOM_FAIL_TYPE_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    S_ENTER_ROOM_FailType_descriptor(), enum_t_value);
+    S_CREATE_ROOM_FAIL_TYPE_descriptor(), enum_t_value);
 }
-inline bool S_ENTER_ROOM_FailType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, S_ENTER_ROOM_FailType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<S_ENTER_ROOM_FailType>(
-    S_ENTER_ROOM_FailType_descriptor(), name, value);
+inline bool S_CREATE_ROOM_FAIL_TYPE_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, S_CREATE_ROOM_FAIL_TYPE* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<S_CREATE_ROOM_FAIL_TYPE>(
+    S_CREATE_ROOM_FAIL_TYPE_descriptor(), name, value);
+}
+enum C_ENTER_ROOM_FAIL_TYPE : int {
+  C_ENTER_ROOM_FAIL_TYPE_UNSPEC = 0,
+  C_ENTER_ROOM_FAIL_TYPE_ASYNC = 1,
+  C_ENTER_ROOM_FAIL_TYPE_NOT_EXIST = 2,
+  C_ENTER_ROOM_FAIL_TYPE_C_ENTER_ROOM_FAIL_TYPE_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  C_ENTER_ROOM_FAIL_TYPE_C_ENTER_ROOM_FAIL_TYPE_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool C_ENTER_ROOM_FAIL_TYPE_IsValid(int value);
+constexpr C_ENTER_ROOM_FAIL_TYPE C_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_MIN = C_ENTER_ROOM_FAIL_TYPE_UNSPEC;
+constexpr C_ENTER_ROOM_FAIL_TYPE C_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_MAX = C_ENTER_ROOM_FAIL_TYPE_NOT_EXIST;
+constexpr int C_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_ARRAYSIZE = C_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* C_ENTER_ROOM_FAIL_TYPE_descriptor();
+template<typename T>
+inline const std::string& C_ENTER_ROOM_FAIL_TYPE_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, C_ENTER_ROOM_FAIL_TYPE>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function C_ENTER_ROOM_FAIL_TYPE_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    C_ENTER_ROOM_FAIL_TYPE_descriptor(), enum_t_value);
+}
+inline bool C_ENTER_ROOM_FAIL_TYPE_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, C_ENTER_ROOM_FAIL_TYPE* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<C_ENTER_ROOM_FAIL_TYPE>(
+    C_ENTER_ROOM_FAIL_TYPE_descriptor(), name, value);
+}
+enum S_ENTER_ROOM_FAIL_TYPE : int {
+  S_ENTER_ROOM_FAIL_TYPE_UNSPEC = 0,
+  S_ENTER_ROOM_FAIL_TYPE_ASYNC = 1,
+  S_ENTER_ROOM_FAIL_TYPE_NOT_EXIST = 2,
+  S_ENTER_ROOM_FAIL_TYPE_S_ENTER_ROOM_FAIL_TYPE_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  S_ENTER_ROOM_FAIL_TYPE_S_ENTER_ROOM_FAIL_TYPE_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool S_ENTER_ROOM_FAIL_TYPE_IsValid(int value);
+constexpr S_ENTER_ROOM_FAIL_TYPE S_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_MIN = S_ENTER_ROOM_FAIL_TYPE_UNSPEC;
+constexpr S_ENTER_ROOM_FAIL_TYPE S_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_MAX = S_ENTER_ROOM_FAIL_TYPE_NOT_EXIST;
+constexpr int S_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_ARRAYSIZE = S_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* S_ENTER_ROOM_FAIL_TYPE_descriptor();
+template<typename T>
+inline const std::string& S_ENTER_ROOM_FAIL_TYPE_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, S_ENTER_ROOM_FAIL_TYPE>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function S_ENTER_ROOM_FAIL_TYPE_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    S_ENTER_ROOM_FAIL_TYPE_descriptor(), enum_t_value);
+}
+inline bool S_ENTER_ROOM_FAIL_TYPE_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, S_ENTER_ROOM_FAIL_TYPE* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<S_ENTER_ROOM_FAIL_TYPE>(
+    S_ENTER_ROOM_FAIL_TYPE_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -247,23 +299,83 @@ class C_CREATE_ROOM final :
 
   // nested types ----------------------------------------------------
 
+  typedef C_CREATE_ROOM_FAIL_TYPE FAIL_TYPE;
+  static constexpr FAIL_TYPE UNSPEC =
+    C_CREATE_ROOM_FAIL_TYPE_UNSPEC;
+  static constexpr FAIL_TYPE ASYNC =
+    C_CREATE_ROOM_FAIL_TYPE_ASYNC;
+  static constexpr FAIL_TYPE EXIST =
+    C_CREATE_ROOM_FAIL_TYPE_EXIST;
+  static inline bool FAIL_TYPE_IsValid(int value) {
+    return C_CREATE_ROOM_FAIL_TYPE_IsValid(value);
+  }
+  static constexpr FAIL_TYPE FAIL_TYPE_MIN =
+    C_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_MIN;
+  static constexpr FAIL_TYPE FAIL_TYPE_MAX =
+    C_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_MAX;
+  static constexpr int FAIL_TYPE_ARRAYSIZE =
+    C_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  FAIL_TYPE_descriptor() {
+    return C_CREATE_ROOM_FAIL_TYPE_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& FAIL_TYPE_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, FAIL_TYPE>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function FAIL_TYPE_Name.");
+    return C_CREATE_ROOM_FAIL_TYPE_Name(enum_t_value);
+  }
+  static inline bool FAIL_TYPE_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      FAIL_TYPE* value) {
+    return C_CREATE_ROOM_FAIL_TYPE_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
     kRoomNameFieldNumber = 1,
+    kCauseFailFieldNumber = 2,
+    kAsyncCompletionFieldNumber = 3,
   };
-  // string roomName = 1;
-  void clear_roomname();
-  const std::string& roomname() const;
+  // string room_name = 1;
+  void clear_room_name();
+  const std::string& room_name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_roomname(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_roomname();
-  PROTOBUF_NODISCARD std::string* release_roomname();
-  void set_allocated_roomname(std::string* roomname);
+  void set_room_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_room_name();
+  PROTOBUF_NODISCARD std::string* release_room_name();
+  void set_allocated_room_name(std::string* room_name);
   private:
-  const std::string& _internal_roomname() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_roomname(const std::string& value);
-  std::string* _internal_mutable_roomname();
+  const std::string& _internal_room_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_room_name(const std::string& value);
+  std::string* _internal_mutable_room_name();
+  public:
+
+  // optional .Packet.C_CREATE_ROOM.FAIL_TYPE cause_fail = 2;
+  bool has_cause_fail() const;
+  private:
+  bool _internal_has_cause_fail() const;
+  public:
+  void clear_cause_fail();
+  ::Packet::C_CREATE_ROOM_FAIL_TYPE cause_fail() const;
+  void set_cause_fail(::Packet::C_CREATE_ROOM_FAIL_TYPE value);
+  private:
+  ::Packet::C_CREATE_ROOM_FAIL_TYPE _internal_cause_fail() const;
+  void _internal_set_cause_fail(::Packet::C_CREATE_ROOM_FAIL_TYPE value);
+  public:
+
+  // optional bool async_completion = 3;
+  bool has_async_completion() const;
+  private:
+  bool _internal_has_async_completion() const;
+  public:
+  void clear_async_completion();
+  bool async_completion() const;
+  void set_async_completion(bool value);
+  private:
+  bool _internal_async_completion() const;
+  void _internal_set_async_completion(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:Packet.C_CREATE_ROOM)
@@ -274,8 +386,11 @@ class C_CREATE_ROOM final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr roomname_;
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr room_name_;
+    int cause_fail_;
+    bool async_completion_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_Packet_2eproto;
@@ -400,64 +515,64 @@ class S_CREATE_ROOM final :
 
   // nested types ----------------------------------------------------
 
-  typedef S_CREATE_ROOM_FailType FailType;
-  static constexpr FailType FAIL_TYPE_UNSPEC =
-    S_CREATE_ROOM_FailType_FAIL_TYPE_UNSPEC;
-  static constexpr FailType FAIL_TYPE_EXIST =
-    S_CREATE_ROOM_FailType_FAIL_TYPE_EXIST;
-  static constexpr FailType FAIL_TYPE_ELSE =
-    S_CREATE_ROOM_FailType_FAIL_TYPE_ELSE;
-  static inline bool FailType_IsValid(int value) {
-    return S_CREATE_ROOM_FailType_IsValid(value);
+  typedef S_CREATE_ROOM_FAIL_TYPE FAIL_TYPE;
+  static constexpr FAIL_TYPE UNSPEC =
+    S_CREATE_ROOM_FAIL_TYPE_UNSPEC;
+  static constexpr FAIL_TYPE ASYNC =
+    S_CREATE_ROOM_FAIL_TYPE_ASYNC;
+  static constexpr FAIL_TYPE EXIST =
+    S_CREATE_ROOM_FAIL_TYPE_EXIST;
+  static inline bool FAIL_TYPE_IsValid(int value) {
+    return S_CREATE_ROOM_FAIL_TYPE_IsValid(value);
   }
-  static constexpr FailType FailType_MIN =
-    S_CREATE_ROOM_FailType_FailType_MIN;
-  static constexpr FailType FailType_MAX =
-    S_CREATE_ROOM_FailType_FailType_MAX;
-  static constexpr int FailType_ARRAYSIZE =
-    S_CREATE_ROOM_FailType_FailType_ARRAYSIZE;
+  static constexpr FAIL_TYPE FAIL_TYPE_MIN =
+    S_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_MIN;
+  static constexpr FAIL_TYPE FAIL_TYPE_MAX =
+    S_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_MAX;
+  static constexpr int FAIL_TYPE_ARRAYSIZE =
+    S_CREATE_ROOM_FAIL_TYPE_FAIL_TYPE_ARRAYSIZE;
   static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
-  FailType_descriptor() {
-    return S_CREATE_ROOM_FailType_descriptor();
+  FAIL_TYPE_descriptor() {
+    return S_CREATE_ROOM_FAIL_TYPE_descriptor();
   }
   template<typename T>
-  static inline const std::string& FailType_Name(T enum_t_value) {
-    static_assert(::std::is_same<T, FailType>::value ||
+  static inline const std::string& FAIL_TYPE_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, FAIL_TYPE>::value ||
       ::std::is_integral<T>::value,
-      "Incorrect type passed to function FailType_Name.");
-    return S_CREATE_ROOM_FailType_Name(enum_t_value);
+      "Incorrect type passed to function FAIL_TYPE_Name.");
+    return S_CREATE_ROOM_FAIL_TYPE_Name(enum_t_value);
   }
-  static inline bool FailType_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
-      FailType* value) {
-    return S_CREATE_ROOM_FailType_Parse(name, value);
+  static inline bool FAIL_TYPE_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      FAIL_TYPE* value) {
+    return S_CREATE_ROOM_FAIL_TYPE_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCauseFailFieldNumber = 1,
-    kRoomIdFieldNumber = 2,
+    kRoomIdFieldNumber = 1,
+    kCauseFailFieldNumber = 2,
   };
-  // optional .Packet.S_CREATE_ROOM.FailType causeFail = 1;
-  bool has_causefail() const;
+  // int32 room_id = 1;
+  void clear_room_id();
+  int32_t room_id() const;
+  void set_room_id(int32_t value);
   private:
-  bool _internal_has_causefail() const;
-  public:
-  void clear_causefail();
-  ::Packet::S_CREATE_ROOM_FailType causefail() const;
-  void set_causefail(::Packet::S_CREATE_ROOM_FailType value);
-  private:
-  ::Packet::S_CREATE_ROOM_FailType _internal_causefail() const;
-  void _internal_set_causefail(::Packet::S_CREATE_ROOM_FailType value);
+  int32_t _internal_room_id() const;
+  void _internal_set_room_id(int32_t value);
   public:
 
-  // int32 roomId = 2;
-  void clear_roomid();
-  int32_t roomid() const;
-  void set_roomid(int32_t value);
+  // optional .Packet.S_CREATE_ROOM.FAIL_TYPE cause_fail = 2;
+  bool has_cause_fail() const;
   private:
-  int32_t _internal_roomid() const;
-  void _internal_set_roomid(int32_t value);
+  bool _internal_has_cause_fail() const;
+  public:
+  void clear_cause_fail();
+  ::Packet::S_CREATE_ROOM_FAIL_TYPE cause_fail() const;
+  void set_cause_fail(::Packet::S_CREATE_ROOM_FAIL_TYPE value);
+  private:
+  ::Packet::S_CREATE_ROOM_FAIL_TYPE _internal_cause_fail() const;
+  void _internal_set_cause_fail(::Packet::S_CREATE_ROOM_FAIL_TYPE value);
   public:
 
   // @@protoc_insertion_point(class_scope:Packet.S_CREATE_ROOM)
@@ -470,8 +585,8 @@ class S_CREATE_ROOM final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    int causefail_;
-    int32_t roomid_;
+    int32_t room_id_;
+    int cause_fail_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_Packet_2eproto;
@@ -596,18 +711,78 @@ class C_ENTER_ROOM final :
 
   // nested types ----------------------------------------------------
 
+  typedef C_ENTER_ROOM_FAIL_TYPE FAIL_TYPE;
+  static constexpr FAIL_TYPE UNSPEC =
+    C_ENTER_ROOM_FAIL_TYPE_UNSPEC;
+  static constexpr FAIL_TYPE ASYNC =
+    C_ENTER_ROOM_FAIL_TYPE_ASYNC;
+  static constexpr FAIL_TYPE NOT_EXIST =
+    C_ENTER_ROOM_FAIL_TYPE_NOT_EXIST;
+  static inline bool FAIL_TYPE_IsValid(int value) {
+    return C_ENTER_ROOM_FAIL_TYPE_IsValid(value);
+  }
+  static constexpr FAIL_TYPE FAIL_TYPE_MIN =
+    C_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_MIN;
+  static constexpr FAIL_TYPE FAIL_TYPE_MAX =
+    C_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_MAX;
+  static constexpr int FAIL_TYPE_ARRAYSIZE =
+    C_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  FAIL_TYPE_descriptor() {
+    return C_ENTER_ROOM_FAIL_TYPE_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& FAIL_TYPE_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, FAIL_TYPE>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function FAIL_TYPE_Name.");
+    return C_ENTER_ROOM_FAIL_TYPE_Name(enum_t_value);
+  }
+  static inline bool FAIL_TYPE_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      FAIL_TYPE* value) {
+    return C_ENTER_ROOM_FAIL_TYPE_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
     kRoomIdFieldNumber = 1,
+    kCauseFailFieldNumber = 2,
+    kAsyncCompletionFieldNumber = 3,
   };
-  // int32 roomId = 1;
-  void clear_roomid();
-  int32_t roomid() const;
-  void set_roomid(int32_t value);
+  // int32 room_id = 1;
+  void clear_room_id();
+  int32_t room_id() const;
+  void set_room_id(int32_t value);
   private:
-  int32_t _internal_roomid() const;
-  void _internal_set_roomid(int32_t value);
+  int32_t _internal_room_id() const;
+  void _internal_set_room_id(int32_t value);
+  public:
+
+  // optional .Packet.C_ENTER_ROOM.FAIL_TYPE cause_fail = 2;
+  bool has_cause_fail() const;
+  private:
+  bool _internal_has_cause_fail() const;
+  public:
+  void clear_cause_fail();
+  ::Packet::C_ENTER_ROOM_FAIL_TYPE cause_fail() const;
+  void set_cause_fail(::Packet::C_ENTER_ROOM_FAIL_TYPE value);
+  private:
+  ::Packet::C_ENTER_ROOM_FAIL_TYPE _internal_cause_fail() const;
+  void _internal_set_cause_fail(::Packet::C_ENTER_ROOM_FAIL_TYPE value);
+  public:
+
+  // optional bool async_completion = 3;
+  bool has_async_completion() const;
+  private:
+  bool _internal_has_async_completion() const;
+  public:
+  void clear_async_completion();
+  bool async_completion() const;
+  void set_async_completion(bool value);
+  private:
+  bool _internal_async_completion() const;
+  void _internal_set_async_completion(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:Packet.C_ENTER_ROOM)
@@ -618,8 +793,11 @@ class C_ENTER_ROOM final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    int32_t roomid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    int32_t room_id_;
+    int cause_fail_;
+    bool async_completion_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_Packet_2eproto;
@@ -744,64 +922,64 @@ class S_ENTER_ROOM final :
 
   // nested types ----------------------------------------------------
 
-  typedef S_ENTER_ROOM_FailType FailType;
-  static constexpr FailType FAIL_TYPE_UNSPEC =
-    S_ENTER_ROOM_FailType_FAIL_TYPE_UNSPEC;
-  static constexpr FailType FAIL_TYPE_NOT_EXIST =
-    S_ENTER_ROOM_FailType_FAIL_TYPE_NOT_EXIST;
-  static constexpr FailType FAIL_TYPE_ELSE =
-    S_ENTER_ROOM_FailType_FAIL_TYPE_ELSE;
-  static inline bool FailType_IsValid(int value) {
-    return S_ENTER_ROOM_FailType_IsValid(value);
+  typedef S_ENTER_ROOM_FAIL_TYPE FAIL_TYPE;
+  static constexpr FAIL_TYPE UNSPEC =
+    S_ENTER_ROOM_FAIL_TYPE_UNSPEC;
+  static constexpr FAIL_TYPE ASYNC =
+    S_ENTER_ROOM_FAIL_TYPE_ASYNC;
+  static constexpr FAIL_TYPE NOT_EXIST =
+    S_ENTER_ROOM_FAIL_TYPE_NOT_EXIST;
+  static inline bool FAIL_TYPE_IsValid(int value) {
+    return S_ENTER_ROOM_FAIL_TYPE_IsValid(value);
   }
-  static constexpr FailType FailType_MIN =
-    S_ENTER_ROOM_FailType_FailType_MIN;
-  static constexpr FailType FailType_MAX =
-    S_ENTER_ROOM_FailType_FailType_MAX;
-  static constexpr int FailType_ARRAYSIZE =
-    S_ENTER_ROOM_FailType_FailType_ARRAYSIZE;
+  static constexpr FAIL_TYPE FAIL_TYPE_MIN =
+    S_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_MIN;
+  static constexpr FAIL_TYPE FAIL_TYPE_MAX =
+    S_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_MAX;
+  static constexpr int FAIL_TYPE_ARRAYSIZE =
+    S_ENTER_ROOM_FAIL_TYPE_FAIL_TYPE_ARRAYSIZE;
   static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
-  FailType_descriptor() {
-    return S_ENTER_ROOM_FailType_descriptor();
+  FAIL_TYPE_descriptor() {
+    return S_ENTER_ROOM_FAIL_TYPE_descriptor();
   }
   template<typename T>
-  static inline const std::string& FailType_Name(T enum_t_value) {
-    static_assert(::std::is_same<T, FailType>::value ||
+  static inline const std::string& FAIL_TYPE_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, FAIL_TYPE>::value ||
       ::std::is_integral<T>::value,
-      "Incorrect type passed to function FailType_Name.");
-    return S_ENTER_ROOM_FailType_Name(enum_t_value);
+      "Incorrect type passed to function FAIL_TYPE_Name.");
+    return S_ENTER_ROOM_FAIL_TYPE_Name(enum_t_value);
   }
-  static inline bool FailType_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
-      FailType* value) {
-    return S_ENTER_ROOM_FailType_Parse(name, value);
+  static inline bool FAIL_TYPE_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      FAIL_TYPE* value) {
+    return S_ENTER_ROOM_FAIL_TYPE_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCauseFailFieldNumber = 1,
-    kUserIdFieldNumber = 2,
+    kUserIdFieldNumber = 1,
+    kCauseFailFieldNumber = 2,
   };
-  // optional .Packet.S_ENTER_ROOM.FailType causeFail = 1;
-  bool has_causefail() const;
+  // int32 user_id = 1;
+  void clear_user_id();
+  int32_t user_id() const;
+  void set_user_id(int32_t value);
   private:
-  bool _internal_has_causefail() const;
-  public:
-  void clear_causefail();
-  ::Packet::S_ENTER_ROOM_FailType causefail() const;
-  void set_causefail(::Packet::S_ENTER_ROOM_FailType value);
-  private:
-  ::Packet::S_ENTER_ROOM_FailType _internal_causefail() const;
-  void _internal_set_causefail(::Packet::S_ENTER_ROOM_FailType value);
+  int32_t _internal_user_id() const;
+  void _internal_set_user_id(int32_t value);
   public:
 
-  // int32 userId = 2;
-  void clear_userid();
-  int32_t userid() const;
-  void set_userid(int32_t value);
+  // optional .Packet.S_ENTER_ROOM.FAIL_TYPE cause_fail = 2;
+  bool has_cause_fail() const;
   private:
-  int32_t _internal_userid() const;
-  void _internal_set_userid(int32_t value);
+  bool _internal_has_cause_fail() const;
+  public:
+  void clear_cause_fail();
+  ::Packet::S_ENTER_ROOM_FAIL_TYPE cause_fail() const;
+  void set_cause_fail(::Packet::S_ENTER_ROOM_FAIL_TYPE value);
+  private:
+  ::Packet::S_ENTER_ROOM_FAIL_TYPE _internal_cause_fail() const;
+  void _internal_set_cause_fail(::Packet::S_ENTER_ROOM_FAIL_TYPE value);
   public:
 
   // @@protoc_insertion_point(class_scope:Packet.S_ENTER_ROOM)
@@ -814,8 +992,8 @@ class S_ENTER_ROOM final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    int causefail_;
-    int32_t userid_;
+    int32_t user_id_;
+    int cause_fail_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_Packet_2eproto;
@@ -1113,13 +1291,13 @@ class S_CHAT final :
   std::string* _internal_mutable_msg();
   public:
 
-  // int32 userId = 1;
-  void clear_userid();
-  int32_t userid() const;
-  void set_userid(int32_t value);
+  // int32 user_id = 1;
+  void clear_user_id();
+  int32_t user_id() const;
+  void set_user_id(int32_t value);
   private:
-  int32_t _internal_userid() const;
-  void _internal_set_userid(int32_t value);
+  int32_t _internal_user_id() const;
+  void _internal_set_user_id(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:Packet.S_CHAT)
@@ -1131,7 +1309,7 @@ class S_CHAT final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-    int32_t userid_;
+    int32_t user_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1148,182 +1326,294 @@ class S_CHAT final :
 #endif  // __GNUC__
 // C_CREATE_ROOM
 
-// string roomName = 1;
-inline void C_CREATE_ROOM::clear_roomname() {
-  _impl_.roomname_.ClearToEmpty();
+// string room_name = 1;
+inline void C_CREATE_ROOM::clear_room_name() {
+  _impl_.room_name_.ClearToEmpty();
 }
-inline const std::string& C_CREATE_ROOM::roomname() const {
-  // @@protoc_insertion_point(field_get:Packet.C_CREATE_ROOM.roomName)
-  return _internal_roomname();
+inline const std::string& C_CREATE_ROOM::room_name() const {
+  // @@protoc_insertion_point(field_get:Packet.C_CREATE_ROOM.room_name)
+  return _internal_room_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void C_CREATE_ROOM::set_roomname(ArgT0&& arg0, ArgT... args) {
+void C_CREATE_ROOM::set_room_name(ArgT0&& arg0, ArgT... args) {
  
- _impl_.roomname_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Packet.C_CREATE_ROOM.roomName)
+ _impl_.room_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Packet.C_CREATE_ROOM.room_name)
 }
-inline std::string* C_CREATE_ROOM::mutable_roomname() {
-  std::string* _s = _internal_mutable_roomname();
-  // @@protoc_insertion_point(field_mutable:Packet.C_CREATE_ROOM.roomName)
+inline std::string* C_CREATE_ROOM::mutable_room_name() {
+  std::string* _s = _internal_mutable_room_name();
+  // @@protoc_insertion_point(field_mutable:Packet.C_CREATE_ROOM.room_name)
   return _s;
 }
-inline const std::string& C_CREATE_ROOM::_internal_roomname() const {
-  return _impl_.roomname_.Get();
+inline const std::string& C_CREATE_ROOM::_internal_room_name() const {
+  return _impl_.room_name_.Get();
 }
-inline void C_CREATE_ROOM::_internal_set_roomname(const std::string& value) {
+inline void C_CREATE_ROOM::_internal_set_room_name(const std::string& value) {
   
-  _impl_.roomname_.Set(value, GetArenaForAllocation());
+  _impl_.room_name_.Set(value, GetArenaForAllocation());
 }
-inline std::string* C_CREATE_ROOM::_internal_mutable_roomname() {
+inline std::string* C_CREATE_ROOM::_internal_mutable_room_name() {
   
-  return _impl_.roomname_.Mutable(GetArenaForAllocation());
+  return _impl_.room_name_.Mutable(GetArenaForAllocation());
 }
-inline std::string* C_CREATE_ROOM::release_roomname() {
-  // @@protoc_insertion_point(field_release:Packet.C_CREATE_ROOM.roomName)
-  return _impl_.roomname_.Release();
+inline std::string* C_CREATE_ROOM::release_room_name() {
+  // @@protoc_insertion_point(field_release:Packet.C_CREATE_ROOM.room_name)
+  return _impl_.room_name_.Release();
 }
-inline void C_CREATE_ROOM::set_allocated_roomname(std::string* roomname) {
-  if (roomname != nullptr) {
+inline void C_CREATE_ROOM::set_allocated_room_name(std::string* room_name) {
+  if (room_name != nullptr) {
     
   } else {
     
   }
-  _impl_.roomname_.SetAllocated(roomname, GetArenaForAllocation());
+  _impl_.room_name_.SetAllocated(room_name, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.roomname_.IsDefault()) {
-    _impl_.roomname_.Set("", GetArenaForAllocation());
+  if (_impl_.room_name_.IsDefault()) {
+    _impl_.room_name_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Packet.C_CREATE_ROOM.roomName)
+  // @@protoc_insertion_point(field_set_allocated:Packet.C_CREATE_ROOM.room_name)
+}
+
+// optional .Packet.C_CREATE_ROOM.FAIL_TYPE cause_fail = 2;
+inline bool C_CREATE_ROOM::_internal_has_cause_fail() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool C_CREATE_ROOM::has_cause_fail() const {
+  return _internal_has_cause_fail();
+}
+inline void C_CREATE_ROOM::clear_cause_fail() {
+  _impl_.cause_fail_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::Packet::C_CREATE_ROOM_FAIL_TYPE C_CREATE_ROOM::_internal_cause_fail() const {
+  return static_cast< ::Packet::C_CREATE_ROOM_FAIL_TYPE >(_impl_.cause_fail_);
+}
+inline ::Packet::C_CREATE_ROOM_FAIL_TYPE C_CREATE_ROOM::cause_fail() const {
+  // @@protoc_insertion_point(field_get:Packet.C_CREATE_ROOM.cause_fail)
+  return _internal_cause_fail();
+}
+inline void C_CREATE_ROOM::_internal_set_cause_fail(::Packet::C_CREATE_ROOM_FAIL_TYPE value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.cause_fail_ = value;
+}
+inline void C_CREATE_ROOM::set_cause_fail(::Packet::C_CREATE_ROOM_FAIL_TYPE value) {
+  _internal_set_cause_fail(value);
+  // @@protoc_insertion_point(field_set:Packet.C_CREATE_ROOM.cause_fail)
+}
+
+// optional bool async_completion = 3;
+inline bool C_CREATE_ROOM::_internal_has_async_completion() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool C_CREATE_ROOM::has_async_completion() const {
+  return _internal_has_async_completion();
+}
+inline void C_CREATE_ROOM::clear_async_completion() {
+  _impl_.async_completion_ = false;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline bool C_CREATE_ROOM::_internal_async_completion() const {
+  return _impl_.async_completion_;
+}
+inline bool C_CREATE_ROOM::async_completion() const {
+  // @@protoc_insertion_point(field_get:Packet.C_CREATE_ROOM.async_completion)
+  return _internal_async_completion();
+}
+inline void C_CREATE_ROOM::_internal_set_async_completion(bool value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.async_completion_ = value;
+}
+inline void C_CREATE_ROOM::set_async_completion(bool value) {
+  _internal_set_async_completion(value);
+  // @@protoc_insertion_point(field_set:Packet.C_CREATE_ROOM.async_completion)
 }
 
 // -------------------------------------------------------------------
 
 // S_CREATE_ROOM
 
-// optional .Packet.S_CREATE_ROOM.FailType causeFail = 1;
-inline bool S_CREATE_ROOM::_internal_has_causefail() const {
+// int32 room_id = 1;
+inline void S_CREATE_ROOM::clear_room_id() {
+  _impl_.room_id_ = 0;
+}
+inline int32_t S_CREATE_ROOM::_internal_room_id() const {
+  return _impl_.room_id_;
+}
+inline int32_t S_CREATE_ROOM::room_id() const {
+  // @@protoc_insertion_point(field_get:Packet.S_CREATE_ROOM.room_id)
+  return _internal_room_id();
+}
+inline void S_CREATE_ROOM::_internal_set_room_id(int32_t value) {
+  
+  _impl_.room_id_ = value;
+}
+inline void S_CREATE_ROOM::set_room_id(int32_t value) {
+  _internal_set_room_id(value);
+  // @@protoc_insertion_point(field_set:Packet.S_CREATE_ROOM.room_id)
+}
+
+// optional .Packet.S_CREATE_ROOM.FAIL_TYPE cause_fail = 2;
+inline bool S_CREATE_ROOM::_internal_has_cause_fail() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
-inline bool S_CREATE_ROOM::has_causefail() const {
-  return _internal_has_causefail();
+inline bool S_CREATE_ROOM::has_cause_fail() const {
+  return _internal_has_cause_fail();
 }
-inline void S_CREATE_ROOM::clear_causefail() {
-  _impl_.causefail_ = 0;
+inline void S_CREATE_ROOM::clear_cause_fail() {
+  _impl_.cause_fail_ = 0;
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline ::Packet::S_CREATE_ROOM_FailType S_CREATE_ROOM::_internal_causefail() const {
-  return static_cast< ::Packet::S_CREATE_ROOM_FailType >(_impl_.causefail_);
+inline ::Packet::S_CREATE_ROOM_FAIL_TYPE S_CREATE_ROOM::_internal_cause_fail() const {
+  return static_cast< ::Packet::S_CREATE_ROOM_FAIL_TYPE >(_impl_.cause_fail_);
 }
-inline ::Packet::S_CREATE_ROOM_FailType S_CREATE_ROOM::causefail() const {
-  // @@protoc_insertion_point(field_get:Packet.S_CREATE_ROOM.causeFail)
-  return _internal_causefail();
+inline ::Packet::S_CREATE_ROOM_FAIL_TYPE S_CREATE_ROOM::cause_fail() const {
+  // @@protoc_insertion_point(field_get:Packet.S_CREATE_ROOM.cause_fail)
+  return _internal_cause_fail();
 }
-inline void S_CREATE_ROOM::_internal_set_causefail(::Packet::S_CREATE_ROOM_FailType value) {
+inline void S_CREATE_ROOM::_internal_set_cause_fail(::Packet::S_CREATE_ROOM_FAIL_TYPE value) {
   _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.causefail_ = value;
+  _impl_.cause_fail_ = value;
 }
-inline void S_CREATE_ROOM::set_causefail(::Packet::S_CREATE_ROOM_FailType value) {
-  _internal_set_causefail(value);
-  // @@protoc_insertion_point(field_set:Packet.S_CREATE_ROOM.causeFail)
-}
-
-// int32 roomId = 2;
-inline void S_CREATE_ROOM::clear_roomid() {
-  _impl_.roomid_ = 0;
-}
-inline int32_t S_CREATE_ROOM::_internal_roomid() const {
-  return _impl_.roomid_;
-}
-inline int32_t S_CREATE_ROOM::roomid() const {
-  // @@protoc_insertion_point(field_get:Packet.S_CREATE_ROOM.roomId)
-  return _internal_roomid();
-}
-inline void S_CREATE_ROOM::_internal_set_roomid(int32_t value) {
-  
-  _impl_.roomid_ = value;
-}
-inline void S_CREATE_ROOM::set_roomid(int32_t value) {
-  _internal_set_roomid(value);
-  // @@protoc_insertion_point(field_set:Packet.S_CREATE_ROOM.roomId)
+inline void S_CREATE_ROOM::set_cause_fail(::Packet::S_CREATE_ROOM_FAIL_TYPE value) {
+  _internal_set_cause_fail(value);
+  // @@protoc_insertion_point(field_set:Packet.S_CREATE_ROOM.cause_fail)
 }
 
 // -------------------------------------------------------------------
 
 // C_ENTER_ROOM
 
-// int32 roomId = 1;
-inline void C_ENTER_ROOM::clear_roomid() {
-  _impl_.roomid_ = 0;
+// int32 room_id = 1;
+inline void C_ENTER_ROOM::clear_room_id() {
+  _impl_.room_id_ = 0;
 }
-inline int32_t C_ENTER_ROOM::_internal_roomid() const {
-  return _impl_.roomid_;
+inline int32_t C_ENTER_ROOM::_internal_room_id() const {
+  return _impl_.room_id_;
 }
-inline int32_t C_ENTER_ROOM::roomid() const {
-  // @@protoc_insertion_point(field_get:Packet.C_ENTER_ROOM.roomId)
-  return _internal_roomid();
+inline int32_t C_ENTER_ROOM::room_id() const {
+  // @@protoc_insertion_point(field_get:Packet.C_ENTER_ROOM.room_id)
+  return _internal_room_id();
 }
-inline void C_ENTER_ROOM::_internal_set_roomid(int32_t value) {
+inline void C_ENTER_ROOM::_internal_set_room_id(int32_t value) {
   
-  _impl_.roomid_ = value;
+  _impl_.room_id_ = value;
 }
-inline void C_ENTER_ROOM::set_roomid(int32_t value) {
-  _internal_set_roomid(value);
-  // @@protoc_insertion_point(field_set:Packet.C_ENTER_ROOM.roomId)
+inline void C_ENTER_ROOM::set_room_id(int32_t value) {
+  _internal_set_room_id(value);
+  // @@protoc_insertion_point(field_set:Packet.C_ENTER_ROOM.room_id)
+}
+
+// optional .Packet.C_ENTER_ROOM.FAIL_TYPE cause_fail = 2;
+inline bool C_ENTER_ROOM::_internal_has_cause_fail() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool C_ENTER_ROOM::has_cause_fail() const {
+  return _internal_has_cause_fail();
+}
+inline void C_ENTER_ROOM::clear_cause_fail() {
+  _impl_.cause_fail_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::Packet::C_ENTER_ROOM_FAIL_TYPE C_ENTER_ROOM::_internal_cause_fail() const {
+  return static_cast< ::Packet::C_ENTER_ROOM_FAIL_TYPE >(_impl_.cause_fail_);
+}
+inline ::Packet::C_ENTER_ROOM_FAIL_TYPE C_ENTER_ROOM::cause_fail() const {
+  // @@protoc_insertion_point(field_get:Packet.C_ENTER_ROOM.cause_fail)
+  return _internal_cause_fail();
+}
+inline void C_ENTER_ROOM::_internal_set_cause_fail(::Packet::C_ENTER_ROOM_FAIL_TYPE value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.cause_fail_ = value;
+}
+inline void C_ENTER_ROOM::set_cause_fail(::Packet::C_ENTER_ROOM_FAIL_TYPE value) {
+  _internal_set_cause_fail(value);
+  // @@protoc_insertion_point(field_set:Packet.C_ENTER_ROOM.cause_fail)
+}
+
+// optional bool async_completion = 3;
+inline bool C_ENTER_ROOM::_internal_has_async_completion() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool C_ENTER_ROOM::has_async_completion() const {
+  return _internal_has_async_completion();
+}
+inline void C_ENTER_ROOM::clear_async_completion() {
+  _impl_.async_completion_ = false;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline bool C_ENTER_ROOM::_internal_async_completion() const {
+  return _impl_.async_completion_;
+}
+inline bool C_ENTER_ROOM::async_completion() const {
+  // @@protoc_insertion_point(field_get:Packet.C_ENTER_ROOM.async_completion)
+  return _internal_async_completion();
+}
+inline void C_ENTER_ROOM::_internal_set_async_completion(bool value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.async_completion_ = value;
+}
+inline void C_ENTER_ROOM::set_async_completion(bool value) {
+  _internal_set_async_completion(value);
+  // @@protoc_insertion_point(field_set:Packet.C_ENTER_ROOM.async_completion)
 }
 
 // -------------------------------------------------------------------
 
 // S_ENTER_ROOM
 
-// optional .Packet.S_ENTER_ROOM.FailType causeFail = 1;
-inline bool S_ENTER_ROOM::_internal_has_causefail() const {
+// int32 user_id = 1;
+inline void S_ENTER_ROOM::clear_user_id() {
+  _impl_.user_id_ = 0;
+}
+inline int32_t S_ENTER_ROOM::_internal_user_id() const {
+  return _impl_.user_id_;
+}
+inline int32_t S_ENTER_ROOM::user_id() const {
+  // @@protoc_insertion_point(field_get:Packet.S_ENTER_ROOM.user_id)
+  return _internal_user_id();
+}
+inline void S_ENTER_ROOM::_internal_set_user_id(int32_t value) {
+  
+  _impl_.user_id_ = value;
+}
+inline void S_ENTER_ROOM::set_user_id(int32_t value) {
+  _internal_set_user_id(value);
+  // @@protoc_insertion_point(field_set:Packet.S_ENTER_ROOM.user_id)
+}
+
+// optional .Packet.S_ENTER_ROOM.FAIL_TYPE cause_fail = 2;
+inline bool S_ENTER_ROOM::_internal_has_cause_fail() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
-inline bool S_ENTER_ROOM::has_causefail() const {
-  return _internal_has_causefail();
+inline bool S_ENTER_ROOM::has_cause_fail() const {
+  return _internal_has_cause_fail();
 }
-inline void S_ENTER_ROOM::clear_causefail() {
-  _impl_.causefail_ = 0;
+inline void S_ENTER_ROOM::clear_cause_fail() {
+  _impl_.cause_fail_ = 0;
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline ::Packet::S_ENTER_ROOM_FailType S_ENTER_ROOM::_internal_causefail() const {
-  return static_cast< ::Packet::S_ENTER_ROOM_FailType >(_impl_.causefail_);
+inline ::Packet::S_ENTER_ROOM_FAIL_TYPE S_ENTER_ROOM::_internal_cause_fail() const {
+  return static_cast< ::Packet::S_ENTER_ROOM_FAIL_TYPE >(_impl_.cause_fail_);
 }
-inline ::Packet::S_ENTER_ROOM_FailType S_ENTER_ROOM::causefail() const {
-  // @@protoc_insertion_point(field_get:Packet.S_ENTER_ROOM.causeFail)
-  return _internal_causefail();
+inline ::Packet::S_ENTER_ROOM_FAIL_TYPE S_ENTER_ROOM::cause_fail() const {
+  // @@protoc_insertion_point(field_get:Packet.S_ENTER_ROOM.cause_fail)
+  return _internal_cause_fail();
 }
-inline void S_ENTER_ROOM::_internal_set_causefail(::Packet::S_ENTER_ROOM_FailType value) {
+inline void S_ENTER_ROOM::_internal_set_cause_fail(::Packet::S_ENTER_ROOM_FAIL_TYPE value) {
   _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.causefail_ = value;
+  _impl_.cause_fail_ = value;
 }
-inline void S_ENTER_ROOM::set_causefail(::Packet::S_ENTER_ROOM_FailType value) {
-  _internal_set_causefail(value);
-  // @@protoc_insertion_point(field_set:Packet.S_ENTER_ROOM.causeFail)
-}
-
-// int32 userId = 2;
-inline void S_ENTER_ROOM::clear_userid() {
-  _impl_.userid_ = 0;
-}
-inline int32_t S_ENTER_ROOM::_internal_userid() const {
-  return _impl_.userid_;
-}
-inline int32_t S_ENTER_ROOM::userid() const {
-  // @@protoc_insertion_point(field_get:Packet.S_ENTER_ROOM.userId)
-  return _internal_userid();
-}
-inline void S_ENTER_ROOM::_internal_set_userid(int32_t value) {
-  
-  _impl_.userid_ = value;
-}
-inline void S_ENTER_ROOM::set_userid(int32_t value) {
-  _internal_set_userid(value);
-  // @@protoc_insertion_point(field_set:Packet.S_ENTER_ROOM.userId)
+inline void S_ENTER_ROOM::set_cause_fail(::Packet::S_ENTER_ROOM_FAIL_TYPE value) {
+  _internal_set_cause_fail(value);
+  // @@protoc_insertion_point(field_set:Packet.S_ENTER_ROOM.cause_fail)
 }
 
 // -------------------------------------------------------------------
@@ -1384,24 +1674,24 @@ inline void C_CHAT::set_allocated_msg(std::string* msg) {
 
 // S_CHAT
 
-// int32 userId = 1;
-inline void S_CHAT::clear_userid() {
-  _impl_.userid_ = 0;
+// int32 user_id = 1;
+inline void S_CHAT::clear_user_id() {
+  _impl_.user_id_ = 0;
 }
-inline int32_t S_CHAT::_internal_userid() const {
-  return _impl_.userid_;
+inline int32_t S_CHAT::_internal_user_id() const {
+  return _impl_.user_id_;
 }
-inline int32_t S_CHAT::userid() const {
-  // @@protoc_insertion_point(field_get:Packet.S_CHAT.userId)
-  return _internal_userid();
+inline int32_t S_CHAT::user_id() const {
+  // @@protoc_insertion_point(field_get:Packet.S_CHAT.user_id)
+  return _internal_user_id();
 }
-inline void S_CHAT::_internal_set_userid(int32_t value) {
+inline void S_CHAT::_internal_set_user_id(int32_t value) {
   
-  _impl_.userid_ = value;
+  _impl_.user_id_ = value;
 }
-inline void S_CHAT::set_userid(int32_t value) {
-  _internal_set_userid(value);
-  // @@protoc_insertion_point(field_set:Packet.S_CHAT.userId)
+inline void S_CHAT::set_user_id(int32_t value) {
+  _internal_set_user_id(value);
+  // @@protoc_insertion_point(field_set:Packet.S_CHAT.user_id)
 }
 
 // string msg = 2;
@@ -1474,15 +1764,25 @@ inline void S_CHAT::set_allocated_msg(std::string* msg) {
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::Packet::S_CREATE_ROOM_FailType> : ::std::true_type {};
+template <> struct is_proto_enum< ::Packet::C_CREATE_ROOM_FAIL_TYPE> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Packet::S_CREATE_ROOM_FailType>() {
-  return ::Packet::S_CREATE_ROOM_FailType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::Packet::C_CREATE_ROOM_FAIL_TYPE>() {
+  return ::Packet::C_CREATE_ROOM_FAIL_TYPE_descriptor();
 }
-template <> struct is_proto_enum< ::Packet::S_ENTER_ROOM_FailType> : ::std::true_type {};
+template <> struct is_proto_enum< ::Packet::S_CREATE_ROOM_FAIL_TYPE> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::Packet::S_ENTER_ROOM_FailType>() {
-  return ::Packet::S_ENTER_ROOM_FailType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::Packet::S_CREATE_ROOM_FAIL_TYPE>() {
+  return ::Packet::S_CREATE_ROOM_FAIL_TYPE_descriptor();
+}
+template <> struct is_proto_enum< ::Packet::C_ENTER_ROOM_FAIL_TYPE> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Packet::C_ENTER_ROOM_FAIL_TYPE>() {
+  return ::Packet::C_ENTER_ROOM_FAIL_TYPE_descriptor();
+}
+template <> struct is_proto_enum< ::Packet::S_ENTER_ROOM_FAIL_TYPE> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::Packet::S_ENTER_ROOM_FAIL_TYPE>() {
+  return ::Packet::S_ENTER_ROOM_FAIL_TYPE_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

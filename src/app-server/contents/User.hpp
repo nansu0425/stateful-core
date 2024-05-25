@@ -15,7 +15,7 @@ namespace Server
 		 *    User    *
 		 *------------*/
 
-		class User
+		class User : public StatefulCore::Asynchronous::JobQueue
 		{
 		private:
 			using Id = int32;
@@ -23,6 +23,9 @@ namespace Server
 		public:
 			User(Id id, SPtr<Room> owner) : m_id(id), m_owner(owner) { }
 			~User() { std::cout << "~User()" << std::endl; }
+
+		public:
+			void          Send(SPtr<StatefulCore::Network::SendBufferChunk> sendBufChunk);
 
 			Id            GetId() { return m_id; }
 			SPtr<Room>    GetOwner() { return m_owner.lock(); }
